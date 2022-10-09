@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Freedom of Thought</title>
+    <link>https://yigengjiang.github.io/posts/</link>
+    <description>Recent content in Posts on Freedom of Thought</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yigengjiang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>欢迎来到 Hugo 世界</title>
+      <link>https://yigengjiang.github.io/hello-world/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yigengjiang.github.io/hello-world/</guid>
+      <description>欢迎来到 Hugo 世界。 开始自己的博客之旅。</description>
+    </item>
+    
+    <item>
+      <title>博客增加了文章内链样式</title>
+      <link>https://yigengjiang.github.io/hugo-single-link/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://yigengjiang.github.io/hugo-single-link/</guid>
+      <description>还是扒了木木哥主题 又搞了一下文章内链接，测试一下样式： 来一曲东北灭火朋克 2020-04-09 个人喜好，奔走相告。 我一直喜欢的东北灭火朋克历时十五年，终于发了新</description>
+    </item>
+    
+    <item>
+      <title>来一曲东北灭火朋克</title>
+      <link>https://yigengjiang.github.io/huo-zha-le/</link>
+      <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://yigengjiang.github.io/huo-zha-le/</guid>
+      <description>个人喜好，奔走相告。 我一直喜欢的东北灭火朋克历时十五年，终于发了新专辑了。</description>
+    </item>
+    
+  </channel>
+</rss>
