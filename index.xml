@@ -6,25 +6,23 @@
     <description>Recent content on Freedom of Thought</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yigengjiang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yigengjiang.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://yigengjiang.github.io/about/</link>
       <pubDate>Tue, 04 Oct 2022 20:39:05 +0800</pubDate>
       
       <guid>https://yigengjiang.github.io/about/</guid>
-      <description>YIGENG JIANG Currently, I`m a senior student in ZSTU.
-I work on machine learning, deep learning and computational neuroscience. I&amp;rsquo;m especially interested in understanding the generalization and memorization in machine and human learning, as well as implications in related areas like privacy.
-CONTACT Email: jianger421@163.com</description>
+      <description>欢迎来到 Freedom of Thought ，这是由 yigeng 所维护的 blog ，主要记录一些机器学习、程序设计以及各种技术和非技术的相关内容。如非特别指明，本站的文章遵循 Attribution-ShareAlike Creative Commons 协议。更</description>
     </item>
     
     <item>
-      <title>欢迎来到 Hugo 世界</title>
+      <title>Welcome</title>
       <link>https://yigengjiang.github.io/hello-world/</link>
-      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://yigengjiang.github.io/hello-world/</guid>
-      <description>欢迎来到 Hugo 世界。 开始自己的博客之旅。</description>
+      <description>欢迎来到 Freedom of Thought ，这是由 yigeng 所维护的 blog ，主要记录一些机器学习、程序设计以及各种技术和非技术的相关内容。如非特别指明，本站的文章遵循 Attribution-ShareAlike Creative Commons 协议。更</description>
     </item>
     
   </channel>

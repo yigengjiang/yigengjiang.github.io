@@ -304,6 +304,7 @@ tbody tr:nth-child(odd) th {
 
 .page,
 .post {
+  /* margin:0 auto; */
   margin-bottom: 4em;
 }
 
