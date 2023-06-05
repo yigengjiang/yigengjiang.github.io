@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Free Thought</title>
@@ -7,24 +6,59 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 22 May 2023 21:23:46 +0800</lastBuildDate><atom:link href="https://yigengjiang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jun 2023 16:13:37 +0800</lastBuildDate>
+    <atom:link href="https://yigengjiang.github.io/posts/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>观数字艺术与莫梵展的体会</title>
+      <link>https://yigengjiang.github.io/digital-traditional-arts/</link>
+      <pubDate>Mon, 05 Jun 2023 16:13:37 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/digital-traditional-arts/</guid>
+      <description>
+        <![CDATA[
+        
+        <p>今年3月份的时候，和朋友约好去看<a href="https://www.douban.com/event/35457786/">莫奈、梵高与现代主义大师真迹展</a><code>下文以莫梵展简称</code>但由于忙毕设和其他事情，所以一直没有去。</p>
+<p>恰好前几天比较有空，并且6月2日博物馆还推出了看展享免费古典乐演奏的体验，于是决[&hellip;] <a href="https://yigengjiang.github.io/digital-traditional-arts/">https://yigengjiang.github.io/digital-traditional-arts/</a></p>
+        
+        ]]>
+      </description>
+    </item>
+    
+    
+    
     <item>
       <title>蒙特卡洛近似圆周率的数学原理</title>
       <link>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</link>
       <pubDate>Mon, 22 May 2023 21:23:46 +0800</pubDate>
-      
       <guid>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</guid>
-      <description>组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。 在阅读王树森的《深度强化学习》一书中</description>
+      <description>
+        <![CDATA[
+        
+        <p>组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。</p>
+<p>在阅读王树森的<a href="https://book.douban.com/subject/36161659/">《深度强化学习》</a>一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，[&hellip;] <a href="https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/">https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</a></p>
+        
+        ]]>
+      </description>
     </item>
+    
+    
     
     <item>
       <title>Learning with Mini-Batch</title>
       <link>https://yigengjiang.github.io/learning-with-minibbatch/</link>
       <pubDate>Wed, 22 Mar 2023 18:22:16 +0800</pubDate>
-      
       <guid>https://yigengjiang.github.io/learning-with-minibbatch/</guid>
-      <description>前言 最近在看一些深度学习相关的书，感觉对于参考文献1中的mini-batch部分理解得不是很透彻，主要是因为神经网络的输入开始变成批数据，加</description>
+      <description>
+        <![CDATA[
+        
+        <h1 id="前言">前言</h1>
+<p>最近在看一些深度学习相关的书，感觉对于参考文献1中的mini-batch部分理解得不是很透彻，主要是因为神经网络的输入开始变成批数据，加之对python的numpy不是很熟了。所以总想写点什么，[&hellip;] <a href="https://yigengjiang.github.io/learning-with-minibbatch/">https://yigengjiang.github.io/learning-with-minibbatch/</a></p>
+        
+        ]]>
+      </description>
     </item>
+    
     
   </channel>
 </rss>

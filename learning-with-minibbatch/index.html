@@ -118,7 +118,11 @@ littletree
 <p>严格地说，我们应该计算所有训练数据的损失函数的总和，以此来更新模型参数(Batch Gradient Descent)。但随着数据集的不断增大，以<a href="https://www.image-net.org/">ImagNet</a>数据集为例，该数据集的数据量有百万之多，计算所有数据的损失函数之和显然是不现实的。若采用计算单个样本的损失函数更新参数的方法(Stochastic Gradient Descent)，会导致$R_{emp}$难以达到最小值，而且在数值处理上不能使用<a href="https://www.cnblogs.com/geeksongs/p/11145776.html">向量化的方法提高运算速度</a>。</p>
 <p>于是，我们采取一种折衷的想法，即取一部分数据，作为全部数据的代表，让神经网络从这每一批数据中学习，这里的“一部分数据”称为mini-batch，这种方法称为mini-batch学习。</p>
 <p>以下图为例，蓝色的线表示Batch Gradient Descent，紫色的线表示Stochastic Gradient Descent，绿色的线表示Mini-Batch Gradient Descent。
-<img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202303221814989.png" alt="image"></p>
+
+  <center>
+  <img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202303221814989.png" alt="image">
+  </center>
+</p>
 <p>从上图可以看出，Mini-Batch相当于结合了Batch Gradient Descent和Stochastic Gradient Descent各自的优点，既能利用向量化方法提高运算速度，又能基本接近全局最小值。</p>
 <p>对于mini-batch学习的介绍到此为止。下面我们将MINIST数据集上的分类问题作为背景，以交叉熵cross-entropy损失函数为例，来实现一下mini-bacth版的cross-entropy error。</p>
 <p>给出cross-entropy error的定义如下:
