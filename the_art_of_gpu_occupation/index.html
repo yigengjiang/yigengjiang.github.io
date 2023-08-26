@@ -18,9 +18,9 @@
     
       
       <meta property="description" content="I have been developing 2030 project almost more than one month.
-I primarily focus on analysing and cleaning data.Recently, I&amp;rsquo;ve delved into some advanced work about LLM. Specifically, I use LoRA &amp;hellip;">
+I primarily focus on analysing and cleaning data. Recently, I&amp;rsquo;ve delved into some advanced work about LLM. Specifically, I use &amp;hellip;">
       <meta property="og:description" content="I have been developing 2030 project almost more than one month.
-I primarily focus on analysing and cleaning data.Recently, I&amp;rsquo;ve delved into some advanced work about LLM. Specifically, I use LoRA &amp;hellip;">
+I primarily focus on analysing and cleaning data. Recently, I&amp;rsquo;ve delved into some advanced work about LLM. Specifically, I use &amp;hellip;">
       
     
 
@@ -108,7 +108,7 @@ littletree
 
 
 <p>I have been developing <a href="https://informatics.xmu.edu.cn/info/1053/28969.htm">2030 project</a> almost more than one month.</p>
-<p>I primarily focus on analysing and cleaning data.Recently, I&rsquo;ve delved into some advanced work about <a href="https://en.wikipedia.org/wiki/Large_language_model">LLM</a>. Specifically, I use <a href="https://arxiv.org/abs/2106.09685">LoRA</a> to fine-tune <a href="https://github.com/LinkSoul-AI/Chinese-Llama-2-7b">Chinese-Llama-2-7b</a>.</p>
+<p>I primarily focus on analysing and cleaning data. Recently, I&rsquo;ve delved into some advanced work about <a href="https://en.wikipedia.org/wiki/Large_language_model">LLM</a>. Specifically, I use <a href="https://arxiv.org/abs/2106.09685">LoRA</a> to fine-tune <a href="https://github.com/LinkSoul-AI/Chinese-Llama-2-7b">Chinese-Llama-2-7b</a>.</p>
 <p>In the beginning, five postgraduates were working on similar tasks as mine on different dataset. Sometimes, serval Ph.D students also use the same server. However, we only have 8 NVIDIA A800 on the server for fine-tuning LLM.</p>
 <p>It is quite annoying to see available GPUs slip away simply because we were slightly slow in executing commands. Therefore, efficiently securing enough GPUs under limited resources becomes crucial.</p>
 <p>In summary, my goal is to design a Python program that can help me grab available GPUs and once I acquire $n$ GPUs, then start running the real program.</p>
@@ -126,8 +126,8 @@ def get_free_gpus()-&gt;list:
     free_gpus = [i for i, mem in enumerate(gpu_memory) if mem &lt; 100]
     return free_gpus
 </code></pre>
-<p>So, how to occupy available GPUs ? I use Python&rsquo;s <code>multiprocessing</code> library to achieve this. If there are $n$ avaible GPUs, $n$ subprocesses will their own GPU.</p>
-<p>In the main process <code>for-loop</code>, the update rate of the <code>occupy_num</code>  variable lags far behind the actual code execution. As a result, the <code>occupy_all_gpus</code> function spawns numerous subprocesses. In fact, the total number of subprocesses exceeds $n$ . However, thanks to the <code>Lock </code> mechanism, only $n$ subprocesses get to occupy GPUs and they grab GPUs orderly.</p>
+<p>So, how to occupy available GPUs ? I  employ Python&rsquo;s <code>multiprocessing</code> library to achieve this. If there are $n$ avaible GPUs, $n$ subprocesses will their own GPU.</p>
+<p>In the main process <code>for-loop</code>, the update rate of the <code>occupy_num</code>  variable lags far behind the actual code execution. As a result, the <code>occupy_all_gpus</code> function spawns numerous subprocesses. In fact, the total number of subprocesses exceeds $n$ . However, thanks to the <code>Lock </code> mechanism, only $n$ subprocesses get to occupy GPUs and grab GPUs orderly.</p>
 <p>To occupy a GPU essentially means claiming its memory. In the <code>occupy_gpu</code> function, I generate a high-dimensional torch tensor on the designated GPU and then make the subprocess enter a sleep state.</p>
 <pre><code class="language-python">def occupy_gpu(gpu_id:int, n, occupy_num, ocpy_gpus, lock, a_dim=100000):
     with lock:
