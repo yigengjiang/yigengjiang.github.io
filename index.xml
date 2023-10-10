@@ -6,8 +6,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 30 Sep 2023 20:18:34 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Oct 2023 21:15:32 +0800</lastBuildDate>
     <atom:link href="https://yigengjiang.github.io/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>报错Cannot load *.so可能通用的解决方法</title>
+      <link>https://yigengjiang.github.io/solution_cannot_load_so/</link>
+      <pubDate>Tue, 10 Oct 2023 21:15:32 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/solution_cannot_load_so/</guid>
+      <description>
+        <![CDATA[
+        
+        <p>今天上80服务器跑mdistiller的代码时，意外发现<code>torch</code>、<code>numpy</code>都不能用了T_T</p>
+<p>导入<code>torch</code>、<code>numpy</code>库时出现如下报错情况</p>
+<pre><code class="language-bash">sh: 0: getcwd() failed: No[&hellip;] <a href="https://yigengjiang.github.io/solution_cannot_load_so/">https://yigengjiang.github.io/solution_cannot_load_so/</a></code></pre>
+        
+        ]]>
+      </description>
+    </item>
+    
     
     
     <item>
