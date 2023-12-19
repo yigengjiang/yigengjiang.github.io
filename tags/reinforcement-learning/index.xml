@@ -1,6 +1,30 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reinforcement Learning on Free Thought</title><link>https://yigengjiang.github.io/tags/reinforcement-learning/</link><description>Recent content in Reinforcement Learning on Free Thought</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 22 May 2023 21:23:46 +0800</lastBuildDate><atom:link href="https://yigengjiang.github.io/tags/reinforcement-learning/" rel="self" type="application/rss+xml"/><item><title>蒙特卡洛近似圆周率的数学原理</title><link>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</link><pubDate>Mon, 22 May 2023 21:23:46 +0800</pubDate><guid>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</guid><description><![CDATA[
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reinforcement Learning on Free Thought</title>
+    <link>https://yigengjiang.github.io/tags/reinforcement-learning/</link>
+    <description>Recent content in Reinforcement Learning on Free Thought</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 22 May 2023 21:23:46 +0800</lastBuildDate>
+    <atom:link href="https://yigengjiang.github.io/tags/reinforcement-learning/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>蒙特卡洛近似圆周率的数学原理</title>
+      <link>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</link>
+      <pubDate>Mon, 22 May 2023 21:23:46 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</guid>
+      <description>
+        <![CDATA[
         
         <p>组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。</p>
 <p>在阅读王树森的<a href="https://book.douban.com/subject/36161659/">《深度强化学习》</a>一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，[&hellip;] <a href="https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/">https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</a></p>
         
-        ]]></description></item></channel></rss>
+        ]]>
+      </description>
+    </item>
+    
+    
+  </channel>
+</rss>

@@ -1,47 +1,143 @@
-<!doctype html><html lang=zh-cn>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>蒙特卡洛近似圆周率的数学原理 - Free Thought</title><meta property="og:title" content="蒙特卡洛近似圆周率的数学原理 - Free Thought">
-<meta name=twitter:card content="summary">
-<meta property="description" content="组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>蒙特卡洛近似圆周率的数学原理 - Free Thought</title>
+    <meta property="og:title" content="蒙特卡洛近似圆周率的数学原理 - Free Thought">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。
 在阅读王树森的《深度强化学习》一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，并举例说明了如何使用蒙特卡洛近似 $\pi$ 。但我对于书中的解释不是很理解，在网上也并未找到合适的蒙特卡洛近似 $\pi$ 的数学解释，在与朋友的讨论过程中，我觉得自己似乎找到了一种较为合理的数学解 &amp;hellip;">
-<meta property="og:description" content="组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。
+      <meta property="og:description" content="组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。
 在阅读王树森的《深度强化学习》一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，并举例说明了如何使用蒙特卡洛近似 $\pi$ 。但我对于书中的解释不是很理解，在网上也并未找到合适的蒙特卡洛近似 $\pi$ 的数学解释，在与朋友的讨论过程中，我觉得自己似乎找到了一种较为合理的数学解 &amp;hellip;">
-<meta name=twitter:image content="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202305222114234.png">
-<link rel=stylesheet href=//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css>
-<link rel=stylesheet href=/css/style.css>
-<link rel=stylesheet href=/css/fonts.css>
-</head><body class=%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87>
-<header class=masthead>
-<h1><a href=/>Free Thought</a></h1><p class=tagline>We are drowning in information but starved for knowledge.</p><nav class=menu>
-<input id=menu-check type=checkbox hidden>
-<label id=menu-label for=menu-check class=unselectable hidden>
-<span class="icon close-icon">✕</span>
-<span class="icon open-icon">☰</span>
-<span class=text>Menu</span>
-</label>
-<ul>
-<li><a href=/>Home</a></li><li><a href=/about/>About</a></li><li><a href=/posts/>Archives</a></li><li><a href=/categories>Categories</a></li><li><a href=/series/>Series</a></li><li><a href=/tags/>Tags</a></li><li><a href=/index.xml>Subscribe</a></li></ul></nav></header><article class=main>
-<header class=title>
-<h1>蒙特卡洛近似圆周率的数学原理</h1><h3>
+      
+    
+
+    
+    
+    
+    <meta name="twitter:image" content="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202305222114234.png">
+    
+    
+
+    
+
+    
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+  <body class="%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87">
+    <header class="masthead">
+      <h1><a href="/">Free Thought</a></h1>
+
+<p class="tagline">We are drowning in information but starved for knowledge.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="/posts/">Archives</a></li>
+  
+  <li><a href="/categories">Categories</a></li>
+  
+  <li><a href="/series/">Series</a></li>
+  
+  <li><a href="/tags/">Tags</a></li>
+  
+  <li><a href="/index.xml">Subscribe</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>蒙特卡洛近似圆周率的数学原理</h1>
+
+
+
+<h3>
+
 littletree
-/
+
+
+
+
+
+
+ / 
 2023-05-22
-</h3><hr>
-</header><p>组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。</p><p>在阅读王树森的<a href=https://book.douban.com/subject/36161659/>《深度强化学习》</a>一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，并举例说明了如何使用蒙特卡洛近似 $\pi$ 。但我对于书中的解释不是很理解，在网上也并未找到合适的蒙特卡洛近似 $\pi$ 的数学解释，在与朋友的讨论过程中，我觉得自己似乎找到了一种较为合理的数学解释方法。</p><p>先来简单介绍一下蒙特卡洛方法。蒙特卡洛方法（Monte Carlo methods）是一类随机算法的总称，它们依靠重复随机采样来估算真实值。其提出者为<a href=https://zh.wikipedia.org/wiki/%E5%86%AF%C2%B7%E8%AF%BA%E4%BC%8A%E6%9B%BC>冯·诺伊曼</a>、<a href=https://zh.wikipedia.org/wiki/%E6%96%AF%E5%A1%94%E5%B0%BC%E6%96%AF%E6%8B%89%E5%A4%AB%C2%B7%E4%B9%8C%E6%8B%89%E5%A7%86>斯塔尼斯拉夫·乌拉姆</a>和<a href=https://zh.wikipedia.org/wiki/%E5%B0%BC%E5%8F%A4%E6%8B%89%E6%96%AF%C2%B7%E6%A2%85%E7%89%B9%E7%BD%97%E6%B3%A2%E5%88%A9%E6%96%AF>尼古拉斯·梅特罗波利斯</a>，由于乌拉姆的叔叔经常在<a href=https://zh.wikipedia.org/wiki/%E6%91%A9%E7%B4%8D%E5%93%A5>摩纳哥</a>的<a href=https://zh.wikipedia.org/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B>蒙特卡洛</a>赌场输钱得名。</p><p>接下来，我们来看看如何使用蒙特卡洛方法估算圆周率。假设我们有一个随机数生成器，可以均匀地生成 $[-1,1]$ 区间的数，也就是说$[-1,1]$区间内的任何数被抽中的概率是相等的。</p><p>我们利用这个随机数生成器生成两个数分别记为 $x$ 和 $y$ ，并将其作为平面坐标系中的一个点$(x, y)$ <code>用三角形表示</code>。如下图所示，由于$x$ 和 $y$ 在$[-1,1]$上均匀分布，因此正方形内的点被抽中的概率是相等的。</p><p>
-<center>
-<img src=https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202305222114234.png alt=image-20230522211357414>
-</center>
-</p><p>设事件 $A$ 表示点位于圆内。由于抽样是均匀的，对于每次随机生成一个点而言，事件A发生的概率为圆的面积与正方形的面积之比，也就是
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<p>组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。</p>
+<p>在阅读王树森的<a href="https://book.douban.com/subject/36161659/">《深度强化学习》</a>一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，并举例说明了如何使用蒙特卡洛近似 $\pi$ 。但我对于书中的解释不是很理解，在网上也并未找到合适的蒙特卡洛近似 $\pi$ 的数学解释，在与朋友的讨论过程中，我觉得自己似乎找到了一种较为合理的数学解释方法。</p>
+<p>先来简单介绍一下蒙特卡洛方法。蒙特卡洛方法（Monte Carlo methods）是一类随机算法的总称，它们依靠重复随机采样来估算真实值。其提出者为<a href="https://zh.wikipedia.org/wiki/%E5%86%AF%C2%B7%E8%AF%BA%E4%BC%8A%E6%9B%BC">冯·诺伊曼</a>、<a href="https://zh.wikipedia.org/wiki/%E6%96%AF%E5%A1%94%E5%B0%BC%E6%96%AF%E6%8B%89%E5%A4%AB%C2%B7%E4%B9%8C%E6%8B%89%E5%A7%86">斯塔尼斯拉夫·乌拉姆</a>和<a href="https://zh.wikipedia.org/wiki/%E5%B0%BC%E5%8F%A4%E6%8B%89%E6%96%AF%C2%B7%E6%A2%85%E7%89%B9%E7%BD%97%E6%B3%A2%E5%88%A9%E6%96%AF">尼古拉斯·梅特罗波利斯</a>，由于乌拉姆的叔叔经常在<a href="https://zh.wikipedia.org/wiki/%E6%91%A9%E7%B4%8D%E5%93%A5">摩纳哥</a>的<a href="https://zh.wikipedia.org/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B">蒙特卡洛</a>赌场输钱得名。</p>
+<p>接下来，我们来看看如何使用蒙特卡洛方法估算圆周率。假设我们有一个随机数生成器，可以均匀地生成 $[-1,1]$ 区间的数，也就是说$[-1,1]$区间内的任何数被抽中的概率是相等的。</p>
+<p>我们利用这个随机数生成器生成两个数分别记为 $x$ 和 $y$ ，并将其作为平面坐标系中的一个点$(x, y)$ <code>用三角形表示</code>。如下图所示，由于$x$ 和 $y$ 在$[-1,1]$上均匀分布，因此正方形内的点被抽中的概率是相等的。</p>
+<p>
+  <center>
+  <img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202305222114234.png" alt="image-20230522211357414">
+  </center>
+</p>
+<p>设事件 $A$ 表示点位于圆内。由于抽样是均匀的，对于每次随机生成一个点而言，事件A发生的概率为圆的面积与正方形的面积之比，也就是
 $$
 P(A) = \frac{\pi}{4}
 $$
-我们重复试验 $n$ 次，生成 $n$ 个点。在每次试验中，事件 $A$ 或者发生，或者不发生。显然，这 $n$ 次试验结果互不影响，相互独立。</p><p>设随机变量 $X$ 表示这 $n$ 次独立重复试验中事件 $A$ 发生的次数，也就是在这 $n$ 个点中位于圆内的点的数量。每次试验中事件 $A$ 发生的概率为 $p$ ，则 $X$ 服从伯努利分布，即 $X ～ B(n,p)$.</p><p>每次试验只有两种可能结果，即事件A发生或者不发生，令</p><p><code>$$ X_i=\left\{\begin{array}{l} 1, 在第i次试验中事件A发生 \\ 0, 在第i次试验中事件A不发生 \end{array}\right.(i = 1,2, ...n) $$</code></p><p>则每一个 $X_i(i = 1,2,&mldr;,n)$服从$0-1$分布，且有相同的分布律</p><p><code>$$ \begin{array}{l|ll} X_i & 0 & 1 \\ \hline p_i & 1-\frac{\pi}{4} & \frac{\pi}{4} \end{array} $$</code></p><p>其中$i = 1, &mldr; , n$ ，$n$ 次伯努利试验中圆内点的数量
+我们重复试验 $n$ 次，生成 $n$ 个点。在每次试验中，事件 $A$ 或者发生，或者不发生。显然，这 $n$ 次试验结果互不影响，相互独立。</p>
+<p>设随机变量 $X$ 表示这 $n$ 次独立重复试验中事件 $A$ 发生的次数，也就是在这 $n$ 个点中位于圆内的点的数量。每次试验中事件 $A$ 发生的概率为 $p$ ，则 $X$ 服从伯努利分布，即 $X ～ B(n,p)$.</p>
+<p>每次试验只有两种可能结果，即事件A发生或者不发生，令</p>
+<p><code>$$ X_i=\left\{\begin{array}{l} 1, 在第i次试验中事件A发生 \\ 0, 在第i次试验中事件A不发生 \end{array}\right.(i = 1,2, ...n) $$</code></p>
+<p>则每一个 $X_i(i = 1,2,&hellip;,n)$服从$0-1$分布，且有相同的分布律</p>
+<p><code>$$ \begin{array}{l|ll} X_i &amp; 0 &amp; 1 \\ \hline p_i &amp; 1-\frac{\pi}{4} &amp; \frac{\pi}{4} \end{array} $$</code></p>
+<p>其中$i = 1, &hellip; , n$ ，$n$ 次伯努利试验中圆内点的数量
 $$
-X = X_1 + X_2 + &mldr; + X_n
+X = X_1 + X_2 + &hellip; + X_n
 $$
-即伯努利分布随机变量可以分解成 $n$ 个 取值互不影响的$0-1$分布随机变量之和。</p><p>由<a href=https://zh.wikipedia.org/wiki/%E5%A4%A7%E6%95%B8%E6%B3%95%E5%89%87#%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B>伯努利大数定理</a>可得</p><p><code>$$\lim_{n \rightarrow \infty} P\left\{\left|\frac{X}{n}-p\right|&lt;\varepsilon\right\}=1$$</code></p><p>上式表明，事件A发生的频率收敛于事件A发生的概率。换言之，假如我们进行了 $n$ 次试验，生成了 $n$ 个点，其中位于圆内的有 $m$ 个点。如果 $n$ 足够大，$m$ 与 $n$ 的比值就会非常接近点位于圆内的概率:
+即伯努利分布随机变量可以分解成 $n$ 个 取值互不影响的$0-1$分布随机变量之和。</p>
+<p>由<a href="https://zh.wikipedia.org/wiki/%E5%A4%A7%E6%95%B8%E6%B3%95%E5%89%87#%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B">伯努利大数定理</a>可得</p>
+<p><code>$$\lim_{n \rightarrow \infty} P\left\{\left|\frac{X}{n}-p\right|&lt;\varepsilon\right\}=1$$</code></p>
+<p>上式表明，事件A发生的频率收敛于事件A发生的概率。换言之，假如我们进行了 $n$ 次试验，生成了 $n$ 个点，其中位于圆内的有 $m$ 个点。如果 $n$ 足够大，$m$ 与 $n$ 的比值就会非常接近点位于圆内的概率:
 $$
 \frac{m}{n} \approx \frac{\pi}{4}
 $$
@@ -49,7 +145,8 @@ $$
 $$
 \pi \approx \frac{4m}{n}
 $$
-使用蒙特卡洛方法近似 $\pi$ 的数学解释到此结束，编程倒是很容易啦，代码如下</p><pre><code class=language-python>def approxiate_pi(n):
+使用蒙特卡洛方法近似 $\pi$ 的数学解释到此结束，编程倒是很容易啦，代码如下</p>
+<pre><code class="language-python">def approxiate_pi(n):
     m = 0
     for i in range(n):
         x = np.random.uniform(-1, 1)
@@ -58,16 +155,92 @@ $$
             m += 1
     pi = 4.0 * m / n
     return pi
-</code></pre><p>在这里需要注意的是，我们使用了<code>np.random.uniform</code>方法从给定的区间中均匀抽样，利用圆的解析方程 $x^2 + y^2 = 1$ 来判断点是否位于圆内。</p><h1 id=references>References</h1><ol>
-<li><a href=https://book.douban.com/subject/1894626/>苏德矿 张继昌. 概率论与数理统计[M]. 1. 高等教育出版社, 2006-6-1.</a></li><li><a href=https://book.douban.com/subject/36161659/>王树森 黎彧君 张志华. 深度强化学习[M]. 1. 人民邮电出版社, 2022-11.</a></li></ol><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//yigeng.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
-<footer>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css integrity=sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X crossorigin=anonymous>
-<script src=//yihui.org/js/math-code.js defer></script>
-<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js integrity=sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz crossorigin=anonymous></script>
-<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous></script>
-<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1})})</script>
-<script src=//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js defer></script>
-<hr>
-<div class=copyright>© <a href=https://github.com/yigengjiang>Yigeng Jiang</a> 2023-2023 | <a href=https://github.com/yigengjiang>Github</a></div></footer></article></body></html>
+</code></pre>
+<p>在这里需要注意的是，我们使用了<code>np.random.uniform</code>方法从给定的区间中均匀抽样，利用圆的解析方程 $x^2 + y^2 = 1$ 来判断点是否位于圆内。</p>
+<h1 id="references">References</h1>
+<ol>
+<li><a href="https://book.douban.com/subject/1894626/">苏德矿 张继昌. 概率论与数理统计[M]. 1. 高等教育出版社, 2006-6-1.</a></li>
+<li><a href="https://book.douban.com/subject/36161659/">王树森 黎彧君 张志华. 深度强化学习[M]. 1. 人民邮电出版社, 2022-11.</a></li>
+</ol>
+
+
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yigeng" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+  <footer>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
+    integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+<script src="//yihui.org/js/math-code.js" defer></script>
+
+<script defer
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
+    integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            
+            throwOnError: false
+        });
+    });
+</script>
+
+
+
+  
+
+
+
+
+
+
+
+<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2023 | <a href="https://github.com/yigengjiang">Github</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

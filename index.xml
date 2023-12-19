@@ -1,14 +1,56 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Free Thought</title><link>https://yigengjiang.github.io/</link><description>Recent content in Home on Free Thought</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 19 Dec 2023 17:58:52 +0800</lastBuildDate><atom:link href="https://yigengjiang.github.io/" rel="self" type="application/rss+xml"/><item><title>An Application in Matrix Theory:Harris Corner Detection</title><link>https://yigengjiang.github.io/harris_corner_detection/</link><pubDate>Tue, 19 Dec 2023 17:58:52 +0800</pubDate><guid>https://yigengjiang.github.io/harris_corner_detection/</guid><description><![CDATA[
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Free Thought</title>
+    <link>https://yigengjiang.github.io/</link>
+    <description>Recent content in Home on Free Thought</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 19 Dec 2023 17:58:52 +0800</lastBuildDate>
+    <atom:link href="https://yigengjiang.github.io/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An Application in Matrix Theory:Harris Corner Detection</title>
+      <link>https://yigengjiang.github.io/harris_corner_detection/</link>
+      <pubDate>Tue, 19 Dec 2023 17:58:52 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/harris_corner_detection/</guid>
+      <description>
+        <![CDATA[
         
         <p>这学期选了一门矩阵论的课，其中有个作业是小组组队科普一些矩阵论的相关应用。我们组选了<a href="https://en.wikipedia.org/wiki/Harris_corner_detector">Harris Corner detection</a>作为报告题目，我负责代码实现部分，花时间整理了下这方面的东西，感觉角点[&hellip;] <a href="https://yigengjiang.github.io/harris_corner_detection/">https://yigengjiang.github.io/harris_corner_detection/</a></p>
         
-        ]]></description></item><item><title>报错Cannot load *.so可能通用的解决方法</title><link>https://yigengjiang.github.io/solution_cannot_load_so/</link><pubDate>Tue, 10 Oct 2023 21:15:32 +0800</pubDate><guid>https://yigengjiang.github.io/solution_cannot_load_so/</guid><description><![CDATA[
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>报错Cannot load *.so可能通用的解决方法</title>
+      <link>https://yigengjiang.github.io/solution_cannot_load_so/</link>
+      <pubDate>Tue, 10 Oct 2023 21:15:32 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/solution_cannot_load_so/</guid>
+      <description>
+        <![CDATA[
         
         <p>今天上80服务器跑mdistiller的代码时，意外发现<code>torch</code>、<code>numpy</code>都不能用了T_T</p>
 <p>导入<code>torch</code>、<code>numpy</code>库时出现如下报错情况</p>
 <pre><code class="language-bash">sh: 0: getcwd() failed: No[&hellip;] <a href="https://yigengjiang.github.io/solution_cannot_load_so/">https://yigengjiang.github.io/solution_cannot_load_so/</a></code></pre>
         
-        ]]></description></item><item><title>信息学科的大学之道</title><link>https://yigengjiang.github.io/higher_education_of_computer_science/</link><pubDate>Sat, 30 Sep 2023 20:18:34 +0800</pubDate><guid>https://yigengjiang.github.io/higher_education_of_computer_science/</guid><description><![CDATA[
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>信息学科的大学之道</title>
+      <link>https://yigengjiang.github.io/higher_education_of_computer_science/</link>
+      <pubDate>Sat, 30 Sep 2023 20:18:34 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/higher_education_of_computer_science/</guid>
+      <description>
+        <![CDATA[
         
         <p>
   <figure>
@@ -20,40 +62,130 @@
 </p>
 <p>梅贻琦先生有句名言：“所谓大学之大，非有大楼之谓也，乃有大师之谓也。”实际上，我们并没有对“大师”做出一个统一标准的定义，人人心中[&hellip;] <a href="https://yigengjiang.github.io/higher_education_of_computer_science/">https://yigengjiang.github.io/higher_education_of_computer_science/</a></p>
         
-        ]]></description></item><item><title>The Art of GPU Occupation</title><link>https://yigengjiang.github.io/the_art_of_gpu_occupation/</link><pubDate>Fri, 25 Aug 2023 20:23:53 +0800</pubDate><guid>https://yigengjiang.github.io/the_art_of_gpu_occupation/</guid><description><![CDATA[
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>The Art of GPU Occupation</title>
+      <link>https://yigengjiang.github.io/the_art_of_gpu_occupation/</link>
+      <pubDate>Fri, 25 Aug 2023 20:23:53 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/the_art_of_gpu_occupation/</guid>
+      <description>
+        <![CDATA[
         
         <p>I have been developing <a href="https://informatics.xmu.edu.cn/info/1053/28969.htm">2030 project</a> almost more than one month.</p>
 <p>I primarily focus on analysing and[&hellip;] <a href="https://yigengjiang.github.io/the_art_of_gpu_occupation/">https://yigengjiang.github.io/the_art_of_gpu_occupation/</a></p>
         
-        ]]></description></item><item><title>癸卯年志心青年立心营纪录与感想</title><link>https://yigengjiang.github.io/zhixin-academy-2023summer/</link><pubDate>Wed, 19 Jul 2023 17:55:16 +0800</pubDate><guid>https://yigengjiang.github.io/zhixin-academy-2023summer/</guid><description><![CDATA[
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>癸卯年志心青年立心营纪录与感想</title>
+      <link>https://yigengjiang.github.io/zhixin-academy-2023summer/</link>
+      <pubDate>Wed, 19 Jul 2023 17:55:16 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/zhixin-academy-2023summer/</guid>
+      <description>
+        <![CDATA[
         
         <p>我于2023年7月5日-7月9日在杭州桐庐志心书院参加为期5天的<a href="https://mp.weixin.qq.com/s/938iY1tuAcFZnj8_Oa48Ww">青年立心营</a>，有些感想，遂成此文。</p>
 <p>我是在大三上的幸福学课上知道志心书院的，当时课堂的实践作业选项之一是来志心当志愿者。但由于疫情以及个人[&hellip;] <a href="https://yigengjiang.github.io/zhixin-academy-2023summer/">https://yigengjiang.github.io/zhixin-academy-2023summer/</a></p>
         
-        ]]></description></item><item><title>毕业了</title><link>https://yigengjiang.github.io/graduate-from-zstu/</link><pubDate>Sat, 17 Jun 2023 11:48:50 +0800</pubDate><guid>https://yigengjiang.github.io/graduate-from-zstu/</guid><description><![CDATA[
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>毕业了</title>
+      <link>https://yigengjiang.github.io/graduate-from-zstu/</link>
+      <pubDate>Sat, 17 Jun 2023 11:48:50 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/graduate-from-zstu/</guid>
+      <description>
+        <![CDATA[
         
         <p>大学毕业了，四年的时光仅在弹指之间。</p>
 <p>毕业这天真正来临时，自己并没有像电影情节中哭的稀里哗啦的，那样感情爆发，只是很平和地面对这一切，人生的常态大概就是如此吧，人来人往。</p>
 <p>当我参加毕业典礼，坐在位子上[&hellip;] <a href="https://yigengjiang.github.io/graduate-from-zstu/">https://yigengjiang.github.io/graduate-from-zstu/</a></p>
         
-        ]]></description></item><item><title>观数字艺术与莫梵展的体会</title><link>https://yigengjiang.github.io/digital-traditional-arts/</link><pubDate>Mon, 05 Jun 2023 16:13:37 +0800</pubDate><guid>https://yigengjiang.github.io/digital-traditional-arts/</guid><description><![CDATA[
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>观数字艺术与莫梵展的体会</title>
+      <link>https://yigengjiang.github.io/digital-traditional-arts/</link>
+      <pubDate>Mon, 05 Jun 2023 16:13:37 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/digital-traditional-arts/</guid>
+      <description>
+        <![CDATA[
         
         <p>今年3月份的时候，和朋友约好去看<a href="https://www.douban.com/event/35457786/">莫奈、梵高与现代主义大师真迹展</a><code>下文以莫梵展简称</code>但由于忙毕设和其他事情，所以一直没有去。</p>
 <p>恰好前几天比较有空，并且6月2日博物馆还推出了看展享免费古典乐演奏的体验，于是决[&hellip;] <a href="https://yigengjiang.github.io/digital-traditional-arts/">https://yigengjiang.github.io/digital-traditional-arts/</a></p>
         
-        ]]></description></item><item><title>蒙特卡洛近似圆周率的数学原理</title><link>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</link><pubDate>Mon, 22 May 2023 21:23:46 +0800</pubDate><guid>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</guid><description><![CDATA[
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>蒙特卡洛近似圆周率的数学原理</title>
+      <link>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</link>
+      <pubDate>Mon, 22 May 2023 21:23:46 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</guid>
+      <description>
+        <![CDATA[
         
         <p>组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。</p>
 <p>在阅读王树森的<a href="https://book.douban.com/subject/36161659/">《深度强化学习》</a>一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，[&hellip;] <a href="https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/">https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</a></p>
         
-        ]]></description></item><item><title>Learning with Mini-Batch</title><link>https://yigengjiang.github.io/learning-with-minibbatch/</link><pubDate>Wed, 22 Mar 2023 18:22:16 +0800</pubDate><guid>https://yigengjiang.github.io/learning-with-minibbatch/</guid><description><![CDATA[
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Learning with Mini-Batch</title>
+      <link>https://yigengjiang.github.io/learning-with-minibbatch/</link>
+      <pubDate>Wed, 22 Mar 2023 18:22:16 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/learning-with-minibbatch/</guid>
+      <description>
+        <![CDATA[
         
         <h1 id="前言">前言</h1>
 <p>最近在看一些深度学习相关的书，感觉对于参考文献1中的mini-batch部分理解得不是很透彻，主要是因为神经网络的输入开始变成批数据，加之对python的numpy不是很熟了。所以总想写点什么，[&hellip;] <a href="https://yigengjiang.github.io/learning-with-minibbatch/">https://yigengjiang.github.io/learning-with-minibbatch/</a></p>
         
-        ]]></description></item><item><title>About</title><link>https://yigengjiang.github.io/about/</link><pubDate>Tue, 04 Oct 2022 20:39:05 +0800</pubDate><guid>https://yigengjiang.github.io/about/</guid><description><![CDATA[
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://yigengjiang.github.io/about/</link>
+      <pubDate>Tue, 04 Oct 2022 20:39:05 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/about/</guid>
+      <description>
+        <![CDATA[
         
         <h3 id="关于我about-me">关于我（About me）</h3>
 <p>我叫 <strong>蒋易耕</strong> ，<strong>littletree</strong> 是我在网上的昵称。2022年推免至<a href="https://mac.xmu.edu.cn/">厦门大学MAC实验室</a>攻读人工智能硕士，我的研究方向是自动机器学习、模型压缩等方面。<strong>AI</strong> 作为数学、计[&hellip;] <a href="https://yigengjiang.github.io/about/">https://yigengjiang.github.io/about/</a></p>
         
-        ]]></description></item></channel></rss>
+        ]]>
+      </description>
+    </item>
+    
+    
+  </channel>
+</rss>

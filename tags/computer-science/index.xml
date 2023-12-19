@@ -1,4 +1,22 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computer Science on Free Thought</title><link>https://yigengjiang.github.io/tags/computer-science/</link><description>Recent content in Computer Science on Free Thought</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 30 Sep 2023 20:18:34 +0800</lastBuildDate><atom:link href="https://yigengjiang.github.io/tags/computer-science/" rel="self" type="application/rss+xml"/><item><title>信息学科的大学之道</title><link>https://yigengjiang.github.io/higher_education_of_computer_science/</link><pubDate>Sat, 30 Sep 2023 20:18:34 +0800</pubDate><guid>https://yigengjiang.github.io/higher_education_of_computer_science/</guid><description><![CDATA[
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Science on Free Thought</title>
+    <link>https://yigengjiang.github.io/tags/computer-science/</link>
+    <description>Recent content in Computer Science on Free Thought</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 30 Sep 2023 20:18:34 +0800</lastBuildDate>
+    <atom:link href="https://yigengjiang.github.io/tags/computer-science/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>信息学科的大学之道</title>
+      <link>https://yigengjiang.github.io/higher_education_of_computer_science/</link>
+      <pubDate>Sat, 30 Sep 2023 20:18:34 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/higher_education_of_computer_science/</guid>
+      <description>
+        <![CDATA[
         
         <p>
   <figure>
@@ -10,4 +28,10 @@
 </p>
 <p>梅贻琦先生有句名言：“所谓大学之大，非有大楼之谓也，乃有大师之谓也。”实际上，我们并没有对“大师”做出一个统一标准的定义，人人心中[&hellip;] <a href="https://yigengjiang.github.io/higher_education_of_computer_science/">https://yigengjiang.github.io/higher_education_of_computer_science/</a></p>
         
-        ]]></description></item></channel></rss>
+        ]]>
+      </description>
+    </item>
+    
+    
+  </channel>
+</rss>
