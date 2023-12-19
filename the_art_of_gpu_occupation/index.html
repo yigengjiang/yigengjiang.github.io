@@ -1,121 +1,34 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>The Art of GPU Occupation - Free Thought</title>
-    <meta property="og:title" content="The Art of GPU Occupation - Free Thought">
-    
-    <meta name="twitter:card" content="summary">
-
-    
-    
-      
-    
-
-    
-      
-      <meta property="description" content="I have been developing 2030 project almost more than one month.
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>The Art of GPU Occupation - Free Thought</title><meta property="og:title" content="The Art of GPU Occupation - Free Thought">
+<meta name=twitter:card content="summary">
+<meta property="description" content="I have been developing 2030 project almost more than one month.
 I primarily focus on analysing and cleaning data. Recently, I&amp;rsquo;ve delved into some advanced work about LLM. Specifically, I use &amp;hellip;">
-      <meta property="og:description" content="I have been developing 2030 project almost more than one month.
+<meta property="og:description" content="I have been developing 2030 project almost more than one month.
 I primarily focus on analysing and cleaning data. Recently, I&amp;rsquo;ve delved into some advanced work about LLM. Specifically, I use &amp;hellip;">
-      
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
-
-
-
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    
-  </head>
-  <body class="the_art_of_gpu_occupation">
-    <header class="masthead">
-      <h1><a href="/">Free Thought</a></h1>
-
-<p class="tagline">We are drowning in information but starved for knowledge.</p>
-
-      <nav class="menu">
-  <input id="menu-check" type="checkbox" hidden/>
-  <label id="menu-label" for="menu-check" class="unselectable" hidden>
-    <span class="icon close-icon">✕</span>
-    <span class="icon open-icon">☰</span>
-    <span class="text">Menu</span>
-  </label>
-  <ul>
-  
-  
-  <li><a href="/">Home</a></li>
-  
-  <li><a href="/about/">About</a></li>
-  
-  <li><a href="/posts/">Archives</a></li>
-  
-  <li><a href="/categories">Categories</a></li>
-  
-  <li><a href="/series/">Series</a></li>
-  
-  <li><a href="/tags/">Tags</a></li>
-  
-  <li><a href="/index.xml">Subscribe</a></li>
-  
-  
-  </ul>
-</nav>
-
-    </header>
-
-    <article class="main">
-      <header class="title">
-      
-<h1>The Art of GPU Occupation</h1>
-
-
-
-<h3>
-
+<link rel=stylesheet href=//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css>
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/fonts.css>
+</head><body class=the_art_of_gpu_occupation>
+<header class=masthead>
+<h1><a href=/>Free Thought</a></h1><p class=tagline>We are drowning in information but starved for knowledge.</p><nav class=menu>
+<input id=menu-check type=checkbox hidden>
+<label id=menu-label for=menu-check class=unselectable hidden>
+<span class="icon close-icon">✕</span>
+<span class="icon open-icon">☰</span>
+<span class=text>Menu</span>
+</label>
+<ul>
+<li><a href=/>Home</a></li><li><a href=/about/>About</a></li><li><a href=/posts/>Archives</a></li><li><a href=/categories>Categories</a></li><li><a href=/series/>Series</a></li><li><a href=/tags/>Tags</a></li><li><a href=/index.xml>Subscribe</a></li></ul></nav></header><article class=main>
+<header class=title>
+<h1>The Art of GPU Occupation</h1><h3>
 littletree
-
-
-
-
-
-
- / 
+/
 2023-08-25
-</h3>
-
-<hr>
-
-
-      </header>
-
-
-
-
-
-<p>I have been developing <a href="https://informatics.xmu.edu.cn/info/1053/28969.htm">2030 project</a> almost more than one month.</p>
-<p>I primarily focus on analysing and cleaning data. Recently, I&rsquo;ve delved into some advanced work about <a href="https://en.wikipedia.org/wiki/Large_language_model">LLM</a>. Specifically, I use <a href="https://arxiv.org/abs/2106.09685">LoRA</a> to fine-tune <a href="https://github.com/LinkSoul-AI/Chinese-Llama-2-7b">Chinese-Llama-2-7b</a>.</p>
-<p>In the beginning, five postgraduates were working on similar tasks as mine on different dataset. Sometimes, serval Ph.D students also use the same server. However, we only have 8 NVIDIA A800 on the server for fine-tuning LLM.</p>
-<p>It is quite annoying to see available GPUs slip away simply because we were slightly slow in executing commands. Therefore, efficiently securing enough GPUs under limited resources becomes crucial.</p>
-<p>In summary, my goal is to design a Python program that can help me grab available GPUs and once I acquire $n$ GPUs, then start running the real program.</p>
-<p>Before delving into the solution, I&rsquo;d like to share something else. Creating a program to grab GPUs aligns with the first of the <a href="https://en.wikipedia.org/wiki/Larry_Wall#Virtues_of_a_programmer">Three Virtues of a Programmer</a> — Laziness. This is because automated GPU allocation saves me more time and energy compared to do it manually. Moreover, automation enhances efficiency and accuracy. The process of automating tasks is also a great way to hone my programming skills.</p>
-<p>Now, let&rsquo;s delve into the source codes and briefly discuss the main idea.</p>
-<p>To grab GPUs, we first need to gather the information about GPUs. For this, I leverage the Python libaray <code>subprocess</code> to execute the  <code>nvidia-smi</code> command, which provides details about GPU status. The <code>get_gpu_mem</code> function retrieves the memory of a specified GPU while <code>get_free_gpus</code> returns available GPUs as a list.</p>
-<pre><code class="language-python">def get_gpu_mem(gpu_id):
+</h3><hr>
+</header><p>I have been developing <a href=https://informatics.xmu.edu.cn/info/1053/28969.htm>2030 project</a> almost more than one month.</p><p>I primarily focus on analysing and cleaning data. Recently, I&rsquo;ve delved into some advanced work about <a href=https://en.wikipedia.org/wiki/Large_language_model>LLM</a>. Specifically, I use <a href=https://arxiv.org/abs/2106.09685>LoRA</a> to fine-tune <a href=https://github.com/LinkSoul-AI/Chinese-Llama-2-7b>Chinese-Llama-2-7b</a>.</p><p>In the beginning, five postgraduates were working on similar tasks as mine on different dataset. Sometimes, serval Ph.D students also use the same server. However, we only have 8 NVIDIA A800 on the server for fine-tuning LLM.</p><p>It is quite annoying to see available GPUs slip away simply because we were slightly slow in executing commands. Therefore, efficiently securing enough GPUs under limited resources becomes crucial.</p><p>In summary, my goal is to design a Python program that can help me grab available GPUs and once I acquire $n$ GPUs, then start running the real program.</p><p>Before delving into the solution, I&rsquo;d like to share something else. Creating a program to grab GPUs aligns with the first of the <a href=https://en.wikipedia.org/wiki/Larry_Wall#Virtues_of_a_programmer>Three Virtues of a Programmer</a> — Laziness. This is because automated GPU allocation saves me more time and energy compared to do it manually. Moreover, automation enhances efficiency and accuracy. The process of automating tasks is also a great way to hone my programming skills.</p><p>Now, let&rsquo;s delve into the source codes and briefly discuss the main idea.</p><p>To grab GPUs, we first need to gather the information about GPUs. For this, I leverage the Python libaray <code>subprocess</code> to execute the <code>nvidia-smi</code> command, which provides details about GPU status. The <code>get_gpu_mem</code> function retrieves the memory of a specified GPU while <code>get_free_gpus</code> returns available GPUs as a list.</p><pre><code class=language-python>def get_gpu_mem(gpu_id):
     gpu_query = subprocess.check_output(['nvidia-smi', '--query-gpu=memory.used', '--format=csv,nounits,noheader'])
     gpu_memory = [int(x) for x in gpu_query.decode('utf-8').split('\n')[:-1]]
     return gpu_memory[gpu_id]
@@ -125,11 +38,7 @@ def get_free_gpus()-&gt;list:
     gpu_memory = [int(x) for x in gpu_query.decode('utf-8').split('\n')[:-1]]
     free_gpus = [i for i, mem in enumerate(gpu_memory) if mem &lt; 100]
     return free_gpus
-</code></pre>
-<p>So, how to occupy available GPUs ? I  employ Python&rsquo;s <code>multiprocessing</code> library to achieve this. If there are $n$ avaible GPUs, $n$ subprocesses will their own GPU.</p>
-<p>In the main process <code>for-loop</code>, the update rate of the <code>occupy_num</code>  variable lags far behind the actual code execution. As a result, the <code>occupy_all_gpus</code> function spawns numerous subprocesses. In fact, the total number of subprocesses exceeds $n$ . However, thanks to the <code>Lock </code> mechanism, only $n$ subprocesses get to occupy GPUs and grab GPUs orderly.</p>
-<p>To occupy a GPU essentially means claiming its memory. In the <code>occupy_gpu</code> function, I generate a high-dimensional torch tensor on the designated GPU and then make the subprocess enter a sleep state.</p>
-<pre><code class="language-python">def occupy_gpu(gpu_id:int, n, occupy_num, ocpy_gpus, lock, a_dim=100000):
+</code></pre><p>So, how to occupy available GPUs ? I employ Python&rsquo;s <code>multiprocessing</code> library to achieve this. If there are $n$ avaible GPUs, $n$ subprocesses will their own GPU.</p><p>In the main process <code>for-loop</code>, the update rate of the <code>occupy_num</code> variable lags far behind the actual code execution. As a result, the <code>occupy_all_gpus</code> function spawns numerous subprocesses. In fact, the total number of subprocesses exceeds $n$ . However, thanks to the <code>Lock </code> mechanism, only $n$ subprocesses get to occupy GPUs and grab GPUs orderly.</p><p>To occupy a GPU essentially means claiming its memory. In the <code>occupy_gpu</code> function, I generate a high-dimensional torch tensor on the designated GPU and then make the subprocess enter a sleep state.</p><pre><code class=language-python>def occupy_gpu(gpu_id:int, n, occupy_num, ocpy_gpus, lock, a_dim=100000):
     with lock:
         if get_gpu_mem(gpu_id) &lt; 100 and occupy_num.value &lt; n:
             import torch
@@ -155,103 +64,23 @@ def occupy_all_gpus(n:int, occupy_num, ocpy_gpus, interval=10):
         time.sleep(interval) # enough time to occupy gpus and update nvidia-smi
     return processes, ocpy_gpus
         
-</code></pre>
-<p>With that, I conclude the introduction to the mechanism of occupying GPUs ends. Once we&rsquo;ve occupy $n$ GPUs, it`s time to run our real program. However, before that, we need to terminate all the subprocesses.</p>
-<pre><code class="language-python">def run_my_program(n, desired_script, processes, ocpy_gpus, occupy_num):
+</code></pre><p>With that, I conclude the introduction to the mechanism of occupying GPUs ends. Once we&rsquo;ve occupy $n$ GPUs, it`s time to run our real program. However, before that, we need to terminate all the subprocesses.</p><pre><code class=language-python>def run_my_program(n, desired_script, processes, ocpy_gpus, occupy_num):
     for p in processes:
         p.terminate()
     ocpy_gpus_list = list(ocpy_gpus[:occupy_num.value])
     cuda_visible_devices = &quot;,&quot;.join(map(str, ocpy_gpus_list))
     os.environ['CUDA_VISIBLE_DEVICES'] = cuda_visible_devices
     subprocess.run([desired_script, str(n)])
-</code></pre>
-<p>In a nutshell, the core of my solution is employing Python multiprocessing to occupy GPUs memory.</p>
-<p>The source code is available for download <a href="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/grab_gpu.py">here</a>. I developed it using Python 3.11. You can run the script by executing the following command.</p>
-<pre><code class="language-bash">python grab_gpu.py --n 3 --otime 30 --spath ./train.sh
-</code></pre>
-<p>I finish the whole work from programming to polish this blog by the help of chatGPT. The capabilities of this tool have profoundly transformed my academic and personal life. The more I engage with it, the more I feel can&rsquo;t live without it.</p>
-<p>This evokes mixed feelings. While I&rsquo;m elated witnessing the moumental strides AI is making to better our lives, the sheer potency of AI instills a lingering apprehension that one day, AI might spiral out of our control.🤔</p>
-<p>The emergence of tools like chatGPT prompts reflection on topics such as the essence of human learning and the evolving nature of a programmer&rsquo;s role.</p>
-<p>Recently, I&rsquo;ve been reading <a href="https://book.douban.com/subject/11609943/"><em>The Art of Unix Programming</em></a>.&quot; Inspired by its title, I&rsquo;ve chosen to name my blog <em>The Art of GPU Occupation</em>.😁</p>
-<p>Hope this blog can help you and if you have any questions or insights, I welcome a hearty discussion! 😆</p>
-
-
-
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "yigeng" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-  <footer>
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
-    integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
-<script src="//yihui.org/js/math-code.js" defer></script>
-
-<script defer
-  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
-    integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
-    crossorigin="anonymous"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        renderMathInElement(document.body, {
-            
-            
-            delimiters: [
-                { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false },
-                { left: '\\(', right: '\\)', display: false },
-                { left: '\\[', right: '\\]', display: true }
-            ],
-            
-            throwOnError: false
-        });
-    });
-</script>
-
-
-  
-
-
-
-
-
-
-
-<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
-
-
-
-  
-  <hr>
-  <div class="copyright">© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2023 | <a href="https://github.com/yigengjiang">Github</a></div>
-  
-  </footer>
-  </article>
-  
-  </body>
-</html>
-
+</code></pre><p>In a nutshell, the core of my solution is employing Python multiprocessing to occupy GPUs memory.</p><p>The source code is available for download <a href=https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/grab_gpu.py>here</a>. I developed it using Python 3.11. You can run the script by executing the following command.</p><pre><code class=language-bash>python grab_gpu.py --n 3 --otime 30 --spath ./train.sh
+</code></pre><p>I finish the whole work from programming to polish this blog by the help of chatGPT. The capabilities of this tool have profoundly transformed my academic and personal life. The more I engage with it, the more I feel can&rsquo;t live without it.</p><p>This evokes mixed feelings. While I&rsquo;m elated witnessing the moumental strides AI is making to better our lives, the sheer potency of AI instills a lingering apprehension that one day, AI might spiral out of our control.🤔</p><p>The emergence of tools like chatGPT prompts reflection on topics such as the essence of human learning and the evolving nature of a programmer&rsquo;s role.</p><p>Recently, I&rsquo;ve been reading <a href=https://book.douban.com/subject/11609943/><em>The Art of Unix Programming</em></a>." Inspired by its title, I&rsquo;ve chosen to name my blog <em>The Art of GPU Occupation</em>.😁</p><p>Hope this blog can help you and if you have any questions or insights, I welcome a hearty discussion! 😆</p><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//yigeng.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+<footer>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css integrity=sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X crossorigin=anonymous>
+<script src=//yihui.org/js/math-code.js defer></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js integrity=sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1})})</script>
+<script src=//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js defer></script>
+<hr>
+<div class=copyright>© <a href=https://github.com/yigengjiang>Yigeng Jiang</a> 2023-2023 | <a href=https://github.com/yigengjiang>Github</a></div></footer></article></body></html>
