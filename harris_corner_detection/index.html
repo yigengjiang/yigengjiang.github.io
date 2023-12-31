@@ -125,7 +125,7 @@ littletree
 <p>总的来说，角点检测从角点的定义入手，corner的定义为：在该点邻域的各个方向上移动均会引起较大的灰度值变化的点。</p>
 <p>粗糙地介绍完了角点检测的原始思想，那如何对其进行数学上的形式化呢？从判断的方法描述中，我提到了可以使用窗口滑动前后灰度值的变化作为判断角点的准则，因此我们可以定义一个表示窗口内灰度值变化的差值函数<code>Error function</code>$E(u,v)$如下
 $$
-E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2 (1)
+E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2 \tag{1}
 $$
 其中$w(x,y)$表示窗口函数，对该点的每个像素点均赋予权值，一般取矩形窗口或者高斯窗口，前者对窗口内的值取1，后者按照高斯分布取值。$I(x+u,y+v)$表示窗口沿u和v平移后的该点的灰度值，$I(x,y)$表示平移前该点的灰度值。求和符号表示对窗口内的所有像素点计算灰度值的变化。</p>
 <p>
@@ -138,20 +138,20 @@ $$
 </p>
 <p>接下来，我们需要对函数$E(u,v)$进行一些化简，首先将$I(x+u,y+v)$在点$(x,y)$处进行一阶Taylor展开，得到下式：
 $$
-E(u,v) \approx \sum_{x,y}w(x,y)[I(x,y)+I_xu+I_yv-I(x,y)]^2 (2)
+E(u,v) \approx \sum_{x,y}w(x,y)[I(x,y)+I_xu+I_yv-I(x,y)]^2 \tag{2}
 $$
 其中$I_x,I_y$分别表示在点$(x,y)$处的沿$x$和$y$方向的一阶偏导。于是，我们便可以消掉$I(x,y)$，将平方拿进去后得到$I(x,y)$的二次型，那么，很自然地我们会想到把这个二次型写成矩阵的形式，最终的化简结果如下：</p>
-<p><code>$$ E(u,v) \approx [u\quad v]M\begin{bmatrix}u\\v\end{bmatrix} (3) $$</code>
+<p><code>$$ E(u,v) \approx [u\quad v]M\begin{bmatrix}u\\v\end{bmatrix} \tag{3} $$</code>
 其中矩阵$M$也被称为结构张量<em>structure tensor</em></p>
-<p><code>$$ M=\sum_{x,y}w(x,y)\begin{bmatrix}I_xI_x&amp;I_xI_y \\ I_xI_y&amp;I_yI_y\end{bmatrix} (4) $$</code></p>
+<p><code>$$ M=\sum_{x,y}w(x,y)\begin{bmatrix}I_xI_x&amp;I_xI_y \\ I_xI_y&amp;I_yI_y\end{bmatrix} \tag{4} $$</code></p>
 <p>可以发现差值函数的大小主要取决于$M$的大小，例如，对于开头例子中的1,2区域来说，在滑动窗口移动相同的距离即$u,v$相同的情况下，能检测到区域2中包含角点的原因为是$M$较大。</p>
 <p>那么如何来度量$M$对$E$的贡献，从而判断是否存在角点呢？Harris 告诉我们可以使用如下式子来判断某个区域内是否存在corner
 $$
-\begin{aligned}R=\det(M)-k\operatorname{tr}(M)^2.\end{aligned} (5)
+\begin{aligned}R=\det(M)-k\operatorname{tr}(M)^2.\end{aligned} \tag{5}
 $$
 由于$\det(M)=\lambda_{1}\lambda_{2}$并且$\operatorname{tr}(M) = \lambda_{1} + \lambda_{2}$，其中$\lambda_{1}\lambda_{2}$分别是矩阵$M$的特征值，于是上式可以进一步展开为：
 $$
-R=\lambda_1\lambda_2-k\left(\lambda_1+\lambda_2\right)^2. (6)
+R=\lambda_1\lambda_2-k\left(\lambda_1+\lambda_2\right)^2. \tag{6}
 $$
 其中$k$是常数，一般取到$[0.04,0.06]$之间</p>
 <blockquote>
@@ -170,9 +170,9 @@ $$
 <p>其实，根据$\lambda_1\lambda_2$的大小来判断差值函数 $E$ 的大小，从而判断是否存在corner还可以从下面这番推导中也可理解。</p>
 <p>由于$M$是一个实对称矩阵，属于正规矩阵，因此$M$酉相似于对角矩阵，且相似变换矩阵$P$为正交矩阵。
 我们将$M$相似对角化后带入等式3后，可以得到如下式子</p>
-<p><code>$$ E(u,v)=[u, v]P[\begin{matrix}\lambda_{1}&amp;0\\0&amp;\lambda_{2}\end{matrix}]P^{T}[u,v]^T (7) $$</code></p>
+<p><code>$$ E(u,v)=[u, v]P[\begin{matrix}\lambda_{1}&amp;0\\0&amp;\lambda_{2}\end{matrix}]P^{T}[u,v]^T \tag{7} $$</code></p>
 <p>其中$\lambda_{1},\lambda_{2}$分别为$M$的特征值。由于$P$为正交矩阵，当它与向量相乘，相对于对该向量进行旋转或者反射，因此我们可以把上式写成如下形式：</p>
-<p><code>$$ E(u,v)=[u', v'][\begin{matrix}\lambda_{1}&amp;0\\0&amp;\lambda_{2}\end{matrix}][u',v']^T \\ =\frac{(u^{\prime})^{2}}{\frac{1}{\lambda_{1}}}+\frac{(v^{\prime})^{2}}{\frac{1}{\lambda_{2}}} (8) $$</code></p>
+<p><code>$$ E(u,v)=[u', v'][\begin{matrix}\lambda_{1}&amp;0\\0&amp;\lambda_{2}\end{matrix}][u',v']^T \\ =\frac{(u^{\prime})^{2}}{\frac{1}{\lambda_{1}}}+\frac{(v^{\prime})^{2}}{\frac{1}{\lambda_{2}}} \tag{8} $$</code></p>
 <p>从几何上，$E(u,v)$可以看作对直角坐标系进行旋转后的一个中心仍在原点的椭圆，如下图。</p>
 <p>
   <figure>
