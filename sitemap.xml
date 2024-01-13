@@ -2,25 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://yigengjiang.github.io/2023_summary/</loc>
+    <lastmod>2024-01-12T19:43:44+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/categories/</loc>
+    <lastmod>2024-01-12T19:43:44+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/</loc>
+    <lastmod>2024-01-12T19:43:44+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/categories/life/</loc>
+    <lastmod>2024-01-12T19:43:44+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/posts/</loc>
+    <lastmod>2024-01-12T19:43:44+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/series/</loc>
+    <lastmod>2024-01-12T19:43:44+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/series/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2024-01-12T19:43:44+08:00</lastmod>
+  </url><url>
     <loc>https://yigengjiang.github.io/harris_corner_detection/</loc>
     <lastmod>2023-12-19T17:58:52+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/categories/</loc>
-    <lastmod>2023-12-19T17:58:52+08:00</lastmod>
-  </url><url>
     <loc>https://yigengjiang.github.io/tags/computer-vision/</loc>
-    <lastmod>2023-12-19T17:58:52+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/</loc>
     <lastmod>2023-12-19T17:58:52+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/categories/mathematics/</loc>
     <lastmod>2023-12-19T17:58:52+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/matrix-theory/</loc>
-    <lastmod>2023-12-19T17:58:52+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/posts/</loc>
     <lastmod>2023-12-19T17:58:52+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/</loc>
@@ -65,9 +77,6 @@
     <loc>https://yigengjiang.github.io/zhixin-academy-2023summer/</loc>
     <lastmod>2023-07-19T17:55:16+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/categories/life/</loc>
-    <lastmod>2023-06-17T11:48:50+08:00</lastmod>
-  </url><url>
     <loc>https://yigengjiang.github.io/tags/student/</loc>
     <lastmod>2023-06-17T11:48:50+08:00</lastmod>
   </url><url>
@@ -97,7 +106,5 @@
   </url><url>
     <loc>https://yigengjiang.github.io/about/</loc>
     <lastmod>2022-10-04T20:39:05+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/series/</loc>
   </url>
 </urlset>

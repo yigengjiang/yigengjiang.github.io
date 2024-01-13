@@ -6,8 +6,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 19 Dec 2023 17:58:52 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jan 2024 19:43:44 +0800</lastBuildDate>
     <atom:link href="https://yigengjiang.github.io/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2023 安河桥</title>
+      <link>https://yigengjiang.github.io/2023_summary/</link>
+      <pubDate>Fri, 12 Jan 2024 19:43:44 +0800</pubDate>
+      <guid>https://yigengjiang.github.io/2023_summary/</guid>
+      <description>
+        <![CDATA[
+        
+        <center>
+  <p style="font-style:italic">我知道 那些夏天<br />
+就像青春一样回不来<br />
+  代替梦想的只能是勉为其难</p></center>
+<p>从今年开始，我打算每年写一次年度总结，对昨年自己的学习生活进行梳理总结，希望能够对未来带来一些启示。而年度总结的标题，如果每次[&hellip;] <a href="https://yigengjiang.github.io/2023_summary/">https://yigengjiang.github.io/2023_summary/</a></p>
+        
+        ]]>
+      </description>
+    </item>
+    
     
     
     <item>
@@ -164,23 +184,6 @@
         
         <h1 id="前言">前言</h1>
 <p>最近在看一些深度学习相关的书，感觉对于参考文献1中的mini-batch部分理解得不是很透彻，主要是因为神经网络的输入开始变成批数据，加之对python的numpy不是很熟了。所以总想写点什么，[&hellip;] <a href="https://yigengjiang.github.io/learning-with-minibbatch/">https://yigengjiang.github.io/learning-with-minibbatch/</a></p>
-        
-        ]]>
-      </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>About</title>
-      <link>https://yigengjiang.github.io/about/</link>
-      <pubDate>Tue, 04 Oct 2022 20:39:05 +0800</pubDate>
-      <guid>https://yigengjiang.github.io/about/</guid>
-      <description>
-        <![CDATA[
-        
-        <h3 id="关于我about-me">关于我（About me）</h3>
-<p>我叫 <strong>蒋易耕</strong> ，<strong>littletree</strong> 是我在网上的昵称。2022年推免至<a href="https://mac.xmu.edu.cn/">厦门大学MAC实验室</a>攻读人工智能硕士，我的研究方向是自动机器学习、模型压缩等方面。<strong>AI</strong> 作为数学、计[&hellip;] <a href="https://yigengjiang.github.io/about/">https://yigengjiang.github.io/about/</a></p>
         
         ]]>
       </description>
