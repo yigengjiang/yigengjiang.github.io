@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://yigengjiang.github.io/2023_summary/</loc>
+    <loc>https://yigengjiang.github.io/posts/2023_summary/</loc>
     <lastmod>2024-01-12T19:43:44+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/categories/</loc>
@@ -23,7 +23,7 @@
     <loc>https://yigengjiang.github.io/series/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2024-01-12T19:43:44+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/harris_corner_detection/</loc>
+    <loc>https://yigengjiang.github.io/posts/harris_corner_detection/</loc>
     <lastmod>2023-12-19T17:58:52+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/computer-vision/</loc>
@@ -47,7 +47,7 @@
     <loc>https://yigengjiang.github.io/tags/python/</loc>
     <lastmod>2023-10-10T21:15:32+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/solution_cannot_load_so/</loc>
+    <loc>https://yigengjiang.github.io/posts/solution_cannot_load_so/</loc>
     <lastmod>2023-10-10T21:15:32+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/chinese-traditional-culture/</loc>
@@ -59,7 +59,7 @@
     <loc>https://yigengjiang.github.io/categories/thoughts/</loc>
     <lastmod>2023-09-30T20:18:34+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/higher_education_of_computer_science/</loc>
+    <loc>https://yigengjiang.github.io/posts/higher_education_of_computer_science/</loc>
     <lastmod>2023-09-30T20:18:34+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/categories/develop/</loc>
@@ -68,25 +68,25 @@
     <loc>https://yigengjiang.github.io/tags/gpu/</loc>
     <lastmod>2023-08-25T20:23:53+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/the_art_of_gpu_occupation/</loc>
+    <loc>https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/</loc>
     <lastmod>2023-08-25T20:23:53+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/thoughts/</loc>
     <lastmod>2023-08-25T20:23:53+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/zhixin-academy-2023summer/</loc>
+    <loc>https://yigengjiang.github.io/posts/zhixin-academy-2023summer/</loc>
     <lastmod>2023-07-19T17:55:16+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/student/</loc>
     <lastmod>2023-06-17T11:48:50+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/graduate-from-zstu/</loc>
+    <loc>https://yigengjiang.github.io/posts/graduate-from-zstu/</loc>
     <lastmod>2023-06-17T11:48:50+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/art/</loc>
     <lastmod>2023-06-05T16:13:37+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/digital-traditional-arts/</loc>
+    <loc>https://yigengjiang.github.io/posts/digital-traditional-arts/</loc>
     <lastmod>2023-06-05T16:13:37+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/monte-carlo/</loc>
@@ -95,10 +95,10 @@
     <loc>https://yigengjiang.github.io/tags/reinforcement-learning/</loc>
     <lastmod>2023-05-22T21:23:46+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</loc>
+    <loc>https://yigengjiang.github.io/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</loc>
     <lastmod>2023-05-22T21:23:46+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/learning-with-minibbatch/</loc>
+    <loc>https://yigengjiang.github.io/posts/learning-with-minibbatch/</loc>
     <lastmod>2023-03-22T18:22:16+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/categories/machine-learning/</loc>
