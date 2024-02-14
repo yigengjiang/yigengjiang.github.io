@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang="zh-CN"></html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Learning with Mini-Batch - Free Thought</title>
-    <meta property="og:title" content="Learning with Mini-Batch - Free Thought">
+    <title>Learning with Mini-Batch - Yigeng’s Blog</title>
+    <meta property="og:title" content="Learning with Mini-Batch - Yigeng’s Blog">
     
     <meta name="twitter:card" content="summary">
-
-    
-    
-      
-    
-
     
       
       <meta property="description" content="最近在看一些深度学习相关的书，感觉对于参考文献1中的mini-batch部分理解得不是很透彻，主要是因为神经网络的输入开始变成批数据，加之对python的numpy不是很熟了。所以总想写点什么，一来有助于加深对于知识的理解，二来也算是分享知识^.^咯。 闲话少叙，让我们进入正题。
@@ -34,78 +27,86 @@
     
 
     
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
     
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
 
-
-
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
   </head>
-  <body class="posts">
-    <header class="masthead">
-      <h1><a href="/">Free Thought</a></h1>
 
-<p class="tagline">知者不惑仁者不憂勇者不懼</p>
-
-      <nav class="menu">
-  <input id="menu-check" type="checkbox" hidden/>
-  <label id="menu-label" for="menu-check" class="unselectable" hidden>
-    <span class="icon close-icon">✕</span>
-    <span class="icon open-icon">☰</span>
-    <span class="text">Menu</span>
-  </label>
-  <ul>
   
   
-  <li><a href="/">Home</a></li>
   
-  <li><a href="/about/">About</a></li>
-  
-  <li><a href="/posts/">Archives</a></li>
-  
-  <li><a href="/categories">Categories</a></li>
-  
-  <li><a href="/series/">Series</a></li>
-  
-  <li><a href="/tags/">Tags</a></li>
-  
-  <li><a href="/index.xml">Subscribe</a></li>
-  
-  
-  </ul>
-</nav>
-
-    </header>
-
-    <article class="main">
-      <header class="title">
+  <body class="single posts">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+    
+      <a href="/">
       
-<h1>Learning with Mini-Batch</h1>
+      至繁归于至简
+      
+      </a>
+    
+    </div>
+    <div class="menu"><span><a href="/">Home</a></span>
+      <span><a href="/about/">About</a></span>
+      <span class="active"><a href="/posts/">Archives</a></span>
+      <span><a href="/categories">Categories</a></span>
+      <span><a href="/search/">Search</a></span>
+      <span><a href="/series/">Series</a></span>
+      <span><a href="/tags/">Tags</a></span>
+      <span><a href="/index.xml">RSS</a></span>
+      
+    </div>
+    </nav>
+
+<div class="article-meta">
+<h1 class="title">Learning with Mini-Batch</h1>
+
+<h3 class="meta-line">
+  <span>
+
+<span class="author">yigeng</span>
 
 
 
-<h3>
-
-littletree
 
 
 
+<span class="date">2023-03-22</span>
 
 
-
- / 
-2023-03-22
+</span>
+  <span class="term">
+  
+  
+  {<a href="/categories/machine-learning/" class="term-cat">Machine Learning</a>}
+  
+  
+  
+  
+  
+  <a href="/tags/deep-learning/" class="term-tag">[Deep Learning,</a>
+  
+  <a href="/tags/python/" class="term-tag">Python]</a>
+  
+  
+  </span>
 </h3>
+</div>
 
-<hr>
-
-
-      </header>
-
+<div class="main">
 
 
 
@@ -118,11 +119,7 @@ littletree
 <p>严格地说，我们应该计算所有训练数据的损失函数的总和，以此来更新模型参数(Batch Gradient Descent)。但随着数据集的不断增大，以<a href="https://www.image-net.org/">ImagNet</a>数据集为例，该数据集的数据量有百万之多，计算所有数据的损失函数之和显然是不现实的。若采用计算单个样本的损失函数更新参数的方法(Stochastic Gradient Descent)，会导致$R_{emp}$难以达到最小值，而且在数值处理上不能使用<a href="https://www.cnblogs.com/geeksongs/p/11145776.html">向量化的方法提高运算速度</a>。</p>
 <p>于是，我们采取一种折衷的想法，即取一部分数据，作为全部数据的代表，让神经网络从这每一批数据中学习，这里的“一部分数据”称为mini-batch，这种方法称为mini-batch学习。</p>
 <p>以下图为例，蓝色的线表示Batch Gradient Descent，紫色的线表示Stochastic Gradient Descent，绿色的线表示Mini-Batch Gradient Descent。
-
-  <center>
-  <img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202303221814989.png" alt="image">
-  </center>
-</p>
+<img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202303221814989.png" alt="image"></p>
 <p>从上图可以看出，Mini-Batch相当于结合了Batch Gradient Descent和Stochastic Gradient Descent各自的优点，既能利用向量化方法提高运算速度，又能基本接近全局最小值。</p>
 <p>对于mini-batch学习的介绍到此为止。下面我们将MINIST数据集上的分类问题作为背景，以交叉熵cross-entropy损失函数为例，来实现一下mini-bacth版的cross-entropy error。</p>
 <p>给出cross-entropy error的定义如下:
@@ -171,7 +168,15 @@ $$</p>
 
 
 
-<div id="disqus_thread"></div>
+<nav class="post-nav fullwidth kai">
+  <span class="nav-prev">&larr; &empty;</span>
+  <span class="nav-next"><a href="/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/">蒙特卡洛近似圆周率的数学原理</a> &rarr;</span>
+</nav>
+
+
+<section class="fullwidth comments">
+    <div class="comments">
+        <div id="disqus_thread"></div>
 <script>
     window.disqus_config = function () {
     
@@ -191,62 +196,57 @@ $$</p>
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+</section>
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+</div>
+  <footer class="small">
+  <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/alt-title.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
 
 
 
-  <footer>
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
-    integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
-<script src="//yihui.org/js/math-code.js" defer></script>
-
-<script defer
-  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
-    integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
-    crossorigin="anonymous"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        renderMathInElement(document.body, {
-            
-            
-            delimiters: [
-                { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false },
-                { left: '\\(', right: '\\)', display: false },
-                { left: '\\[', right: '\\]', display: true }
-            ],
-            
-            throwOnError: false
-        });
-    });
-</script>
 
 
 
   
-
-
-
-
-
-
-
-<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
-
-
-
   
-  <hr>
-  <div class="copyright">© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2024 | <a href="https://github.com/yigengjiang">Github</a></div>
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2024 | <a href="https://github.com/yigengjiang">Github</a></span>
+    <span class="menu-bottom">
+
+
+
+
+
+
+
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href="/search/">Search</a>
+<a href="#">Back to top</a>
+</span>
+  </p>
   
   </footer>
-  </article>
-  
   </body>
 </html>
+
+
 

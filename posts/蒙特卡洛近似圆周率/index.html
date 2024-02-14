@@ -1,26 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang="zh-CN"></html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>蒙特卡洛近似圆周率的数学原理 - Free Thought</title>
-    <meta property="og:title" content="蒙特卡洛近似圆周率的数学原理 - Free Thought">
+    <title>蒙特卡洛近似圆周率的数学原理 - Yigeng’s Blog</title>
+    <meta property="og:title" content="蒙特卡洛近似圆周率的数学原理 - Yigeng’s Blog">
     
     <meta name="twitter:card" content="summary">
-
-    
-    
-      
-    
-
     
       
       <meta property="description" content="组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。
-在阅读王树森的《深度强化学习》一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，并举例说明了如何使用蒙特卡洛近似 $\pi$ 。但我对于书中的解释不是很理解，在网上也并未找到合适的蒙特卡洛近似 $\pi$ 的数学解释，在与朋友的讨论过程中，我觉得自己似乎找到了一种较为合理的数学解 &amp;hellip;">
+[&amp;hellip;] 在阅读王树森的《深度强化学习》一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，并举例说明了如何使用蒙特卡洛近似 $\pi$ 。但我对于书中的解释不是很理解，在网上也并未找到合适的蒙特卡洛近似 $\pi$ 的数学解释，在与朋友的讨论过程中，我觉得自己似乎找到 &amp;hellip;">
       <meta property="og:description" content="组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。
-在阅读王树森的《深度强化学习》一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，并举例说明了如何使用蒙特卡洛近似 $\pi$ 。但我对于书中的解释不是很理解，在网上也并未找到合适的蒙特卡洛近似 $\pi$ 的数学解释，在与朋友的讨论过程中，我觉得自己似乎找到了一种较为合理的数学解 &amp;hellip;">
+[&amp;hellip;] 在阅读王树森的《深度强化学习》一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，并举例说明了如何使用蒙特卡洛近似 $\pi$ 。但我对于书中的解释不是很理解，在网上也并未找到合适的蒙特卡洛近似 $\pi$ 的数学解释，在与朋友的讨论过程中，我觉得自己似乎找到 &amp;hellip;">
       
     
 
@@ -34,78 +27,88 @@
     
 
     
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
     
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
 
-
-
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
   </head>
-  <body class="posts">
-    <header class="masthead">
-      <h1><a href="/">Free Thought</a></h1>
 
-<p class="tagline">知者不惑仁者不憂勇者不懼</p>
-
-      <nav class="menu">
-  <input id="menu-check" type="checkbox" hidden/>
-  <label id="menu-label" for="menu-check" class="unselectable" hidden>
-    <span class="icon close-icon">✕</span>
-    <span class="icon open-icon">☰</span>
-    <span class="text">Menu</span>
-  </label>
-  <ul>
   
   
-  <li><a href="/">Home</a></li>
   
-  <li><a href="/about/">About</a></li>
-  
-  <li><a href="/posts/">Archives</a></li>
-  
-  <li><a href="/categories">Categories</a></li>
-  
-  <li><a href="/series/">Series</a></li>
-  
-  <li><a href="/tags/">Tags</a></li>
-  
-  <li><a href="/index.xml">Subscribe</a></li>
-  
-  
-  </ul>
-</nav>
-
-    </header>
-
-    <article class="main">
-      <header class="title">
+  <body class="single posts">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+    
+      <a href="/">
       
-<h1>蒙特卡洛近似圆周率的数学原理</h1>
+      至繁归于至简
+      
+      </a>
+    
+    </div>
+    <div class="menu"><span><a href="/">Home</a></span>
+      <span><a href="/about/">About</a></span>
+      <span class="active"><a href="/posts/">Archives</a></span>
+      <span><a href="/categories">Categories</a></span>
+      <span><a href="/search/">Search</a></span>
+      <span><a href="/series/">Series</a></span>
+      <span><a href="/tags/">Tags</a></span>
+      <span><a href="/index.xml">RSS</a></span>
+      
+    </div>
+    </nav>
+
+<div class="article-meta">
+<h1 class="title">蒙特卡洛近似圆周率的数学原理</h1>
+
+<h3 class="meta-line">
+  <span>
+
+<span class="author">yigeng</span>
 
 
 
-<h3>
-
-littletree
 
 
 
+<span class="date">2023-05-22</span>
 
 
-
- / 
-2023-05-22
+</span>
+  <span class="term">
+  
+  
+  {<a href="/categories/mathematics/" class="term-cat">Mathematics</a>}
+  
+  
+  
+  
+  
+  <a href="/tags/monte-carlo/" class="term-tag">[Monte Carlo,</a>
+  
+  <a href="/tags/python/" class="term-tag">Python,</a>
+  
+  <a href="/tags/reinforcement-learning/" class="term-tag">Reinforcement Learning]</a>
+  
+  
+  </span>
 </h3>
+</div>
 
-<hr>
-
-
-      </header>
-
+<div class="main">
 
 
 
@@ -115,11 +118,7 @@ littletree
 <p>先来简单介绍一下蒙特卡洛方法。蒙特卡洛方法（Monte Carlo methods）是一类随机算法的总称，它们依靠重复随机采样来估算真实值。其提出者为<a href="https://zh.wikipedia.org/wiki/%E5%86%AF%C2%B7%E8%AF%BA%E4%BC%8A%E6%9B%BC">冯·诺伊曼</a>、<a href="https://zh.wikipedia.org/wiki/%E6%96%AF%E5%A1%94%E5%B0%BC%E6%96%AF%E6%8B%89%E5%A4%AB%C2%B7%E4%B9%8C%E6%8B%89%E5%A7%86">斯塔尼斯拉夫·乌拉姆</a>和<a href="https://zh.wikipedia.org/wiki/%E5%B0%BC%E5%8F%A4%E6%8B%89%E6%96%AF%C2%B7%E6%A2%85%E7%89%B9%E7%BD%97%E6%B3%A2%E5%88%A9%E6%96%AF">尼古拉斯·梅特罗波利斯</a>，由于乌拉姆的叔叔经常在<a href="https://zh.wikipedia.org/wiki/%E6%91%A9%E7%B4%8D%E5%93%A5">摩纳哥</a>的<a href="https://zh.wikipedia.org/wiki/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B">蒙特卡洛</a>赌场输钱得名。</p>
 <p>接下来，我们来看看如何使用蒙特卡洛方法估算圆周率。假设我们有一个随机数生成器，可以均匀地生成 $[-1,1]$ 区间的数，也就是说$[-1,1]$区间内的任何数被抽中的概率是相等的。</p>
 <p>我们利用这个随机数生成器生成两个数分别记为 $x$ 和 $y$ ，并将其作为平面坐标系中的一个点$(x, y)$ <code>用三角形表示</code>。如下图所示，由于$x$ 和 $y$ 在$[-1,1]$上均匀分布，因此正方形内的点被抽中的概率是相等的。</p>
-<p>
-  <center>
-  <img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202305222114234.png" alt="image-20230522211357414">
-  </center>
-</p>
+<p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202305222114234.png" alt="image-20230522211357414"></p>
 <p>设事件 $A$ 表示点位于圆内。由于抽样是均匀的，对于每次随机生成一个点而言，事件A发生的概率为圆的面积与正方形的面积之比，也就是
 $$
 P(A) = \frac{\pi}{4}
@@ -165,7 +164,15 @@ $$
 
 
 
-<div id="disqus_thread"></div>
+<nav class="post-nav fullwidth kai">
+  <span class="nav-prev">&larr; <a href="/posts/learning-with-minibbatch/">Learning with Mini-Batch</a></span>
+  <span class="nav-next"><a href="/posts/digital-traditional-arts/">观数字艺术与莫梵展的体会</a> &rarr;</span>
+</nav>
+
+
+<section class="fullwidth comments">
+    <div class="comments">
+        <div id="disqus_thread"></div>
 <script>
     window.disqus_config = function () {
     
@@ -185,62 +192,61 @@ $$
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+</section>
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+</div>
+  <footer class="small">
+  <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/alt-title.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/ol-id.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
 
 
 
-  <footer>
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
-    integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
-<script src="//yihui.org/js/math-code.js" defer></script>
-
-<script defer
-  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
-    integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
-    crossorigin="anonymous"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        renderMathInElement(document.body, {
-            
-            
-            delimiters: [
-                { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false },
-                { left: '\\(', right: '\\)', display: false },
-                { left: '\\[', right: '\\]', display: true }
-            ],
-            
-            throwOnError: false
-        });
-    });
-</script>
 
 
 
   
-
-
-
-
-
-
-
-<script src="//cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" defer></script>
-
-
-
   
-  <hr>
-  <div class="copyright">© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2024 | <a href="https://github.com/yigengjiang">Github</a></div>
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2024 | <a href="https://github.com/yigengjiang">Github</a></span>
+    <span class="menu-bottom">
+
+
+
+
+
+
+
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href="/search/">Search</a>
+<a href="#">Back to top</a>
+</span>
+  </p>
   
   </footer>
-  </article>
-  
   </body>
 </html>
+
+
 

@@ -1,9 +1,20 @@
+@font-face {
+  font-family: 'Linden Hill';
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/theleagueof/linden-hill/webfonts/LindenHill-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'Linden Hill';
+  font-style: italic;
+  src: url('https://cdn.jsdelivr.net/gh/theleagueof/linden-hill/webfonts/LindenHill-Italic-webfont.woff') format('woff');
+}
 body {
-  font-family: Optima, 'Lucida Sans', Calibri, Candara, Arial, 'source-han-serif-sc', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif TC', 'Source Han Serif TW', 'Source Han Serif', 'Noto Serif CJK SC', 'Songti SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'Linden Hill', Palatino, serif;
 }
 code {
-  font-family: "Lucida Console", 'Andale Mono', 'STKaiti', 'KaiTi', 'SimKai', monospace;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 85%;
 }
-pre code {
-  font-family: Consolas, "Lucida Console", Monaco, 'STKaiti', 'KaiTi', 'SimKai', monospace;
+.menu, .meta-line, footer {
+  font-family: Jost, Optima, Candara, sans-serif;
 }
