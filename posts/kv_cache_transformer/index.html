@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN"></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>KV Cache in Transformer - Yigeng’s Blog</title>
+    <meta property="og:title" content="KV Cache in Transformer - Yigeng’s Blog">
+    
+    <meta name="twitter:card" content="summary">
+    
+      
+      <meta property="description" content="最近在研究Transformer，经常碰到KV-Cache，每次都要去查一下才能回想起来这个东西。但稍微研究了一下，觉得kv-cache从数学上来说是非常显然的，在这里总结一下我对kv-cache的理解。
+[&amp;hellip;] KV-Cache源自于Transformer，全称是Key-Value Cache，也就是对Key和Value的缓存。
+[&amp;hellip;] Transformer相对 &amp;hellip;">
+      <meta property="og:description" content="最近在研究Transformer，经常碰到KV-Cache，每次都要去查一下才能回想起来这个东西。但稍微研究了一下，觉得kv-cache从数学上来说是非常显然的，在这里总结一下我对kv-cache的理解。
+[&amp;hellip;] KV-Cache源自于Transformer，全称是Key-Value Cache，也就是对Key和Value的缓存。
+[&amp;hellip;] Transformer相对 &amp;hellip;">
+      
+    
+
+    
+    
+    
+    <meta name="twitter:image" content="https://miro.medium.com/v2/resize:fit:875/0*sexO6adGhaKr7aH0.gif">
+    
+    
+
+    
+
+    
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+    
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  </head>
+
+  
+  
+  
+  <body class="single posts">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+    
+      <a href="/">
+      
+      <img src="/images/bird.jpg" alt="至繁归于至简" />
+      
+      </a>
+    
+    </div>
+    <div class="menu"><span><a href="/">Home</a></span>
+      <span><a href="/about/">About</a></span>
+      <span class="active"><a href="/posts/">Archives</a></span>
+      <span><a href="/categories">Categories</a></span>
+      <span><a href="/search/">Search</a></span>
+      <span><a href="/series/">Series</a></span>
+      <span><a href="/tags/">Tags</a></span>
+      <span><a href="/index.xml">RSS</a></span>
+      
+    </div>
+    </nav>
+
+<div class="article-meta">
+<h1 class="title">KV Cache in Transformer</h1>
+
+<h3 class="meta-line">
+  <span>
+
+<span class="author">yigeng</span>
+
+
+
+
+
+
+<span class="date">2024-05-25</span>
+
+
+</span>
+  <span class="term">
+  
+  
+  {<a href="/categories/machine-learning/" class="term-cat">Machine Learning</a>}
+  
+  
+  
+  
+  
+  <a href="/tags/transformer/" class="term-tag">[Transformer,</a>
+  
+  <a href="/tags/python/" class="term-tag">Python]</a>
+  
+  
+  </span>
+</h3>
+</div>
+
+<div class="main">
+
+
+
+
+<p>最近在研究Transformer，经常碰到KV-Cache，每次都要去查一下才能回想起来这个东西。但稍微研究了一下，觉得kv-cache从数学上来说是非常显然的，在这里总结一下我对kv-cache的理解。</p>
+<p>KV-Cache源自于Transformer，全称是Key-Value Cache，也就是对Key和Value的缓存。</p>
+<p>Transformer相对于CNN最大的特点就是引入了Attention计算，其计算公式如下:
+$$
+\mathrm{Attention}(Q,K,V)=\mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V \tag{1}
+$$
+其中$Q,K,V$分别代表Query、Key和Value矩阵，$d_k$代表Scaling factor，属于实数。所谓KV-Cache便是在Attention计算中，通过对Key和Value进行缓存，从而减小不必要的开销，这里“不必要”指由于我们已经缓存了部分Key和Value，因此不需要再进行重复计算以得到这部分Key和Value，使用之前计算好了的即可。</p>
+<p>那么为什么说后续的Attention计算中会用到之前的Key和Value呢？这就要讲一下Transformer是如何进行推理了。</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:875/0*sexO6adGhaKr7aH0.gif" alt="auto-regressive generation of the decoder">
+<em>In the auto-regressive generation of the decoder, given an input the model predicts the next token, and then taking the combined input in the next step the next prediction is made. (Image source: <a href="https://jalammar.github.io/illustrated-gpt2/)">https://jalammar.github.io/illustrated-gpt2/)</a>.</em></p>
+<p>如上图所示GPT-2使用的是Transformer的decoder架构，这类模型在推理时采取的是auto-regressive自回归式的风格，具体的说，在第$i$个round时，模型输出1个token，例如上图中的“robot”。</p>
+<p>到了第$i+1$个$\mathrm{round}$模型会继续推理，但这时模型的输入会发生变化，它会将上个$\mathrm{round}$预测得到的token，&ldquo;robot&rdquo; append到第$i$个$\mathrm{round}$的输入<code>recite ... A</code>的后面，作为第$i+1$个$\mathrm{round}$模型输入。</p>
+<p>这里可以稍微看下Transformer推理的源码，auto-regressive的体现便是在<code>torch.cat</code>函数。</p>
+<pre><code class="language-python"># Generate the translation word by word
+while decoder_input.size(1) &lt; seq_len:
+    # build mask for target and calculate output
+    decoder_mask = torch.triu(torch.ones((1, decoder_input.size(1), decoder_input.size(1))), diagonal=1).type(torch.int).type_as(source_mask).to(device)
+    out = model.decode(encoder_output, source_mask, decoder_input, decoder_mask)
+
+    # project next token
+    prob = model.project(out[:, -1])
+    _, next_word = torch.max(prob, dim=1)
+    decoder_input = torch.cat([decoder_input, torch.empty(1, 1).type_as(source).fill_(next_word.item()).to(device)], dim=1)
+
+    # print the translated word
+    print(f&quot;{tokenizer_tgt.decode([next_word.item()])}&quot;, end=' ')
+
+    # break if we predict the end of sentence token
+    if next_word == tokenizer_tgt.token_to_id('[EOS]'):
+        break
+</code></pre>
+<p>一句话总结，auto-regressive类模型会将预测的结果Concatenate到输入末尾作为新的输入，然后继续预测。</p>
+<p>了解了Transformer是如何推理的，我们再回到Attention的计算。</p>
+<p>假设从$\mathrm{round_1}$开始模型输入是1个token，在具体的实现上，我们会用Vector向量来表示1个token，正如我们在cv中用矩阵表示图像那样，我们记这个token输入向量为$x_1$，为了方便后续数学表达，当我们定义一个向量时，默认它为行向量，区别于传统线代中默认向量为列向量。</p>
+<p>这里顺便说一下，在Transformer的代码实现上，Attention机制中的$Q_w,K_w,V_w $是一组可学习的权重参数，用<code>nn.Linear</code>来表示的线性层。</p>
+<p>在$\mathrm{round_1}$推理过程中，我们将$x_1$分别和$Q_w,K_w,V_w $相乘得到 $q_1,k_1,v_1$，然后带入到等式1中完成Attention的计算。整个模型forward结束，会得到模型输出的1个token，我们把它记为$q_2$。</p>
+<p>在$\mathrm{round_2}$时，我们将$q_1, q_2$组合作为输入，和$Q_w,K_w,V_w $做矩阵乘得到$k_1,k_2$以及$v_1 v_2 $。</p>
+<p>在$\mathrm{round_n}$时，我们手里有$q_1,q_2,&hellip;q_n$，记$Q=\begin{pmatrix}q_1\\q_2\\ \vdots\\q_n\end{pmatrix}$。我们将$Q$分别与$Q_w,K_w,V_w $相乘得到$K,V$</p>
+<p>有了$Q,K,V$，我们来看一下Attention的计算，注意Attention计算的关键在于QKV矩阵乘，softmax对每一行元素做归一化，Scaling factor对矩阵中每个元素的value做放缩，总的来说softmax和Scaling factor都只是对矩阵中元素值做放缩。因此，我们忽略softmax和Scaling factor并不会对KV-Cache的理解有影响。那么，Attention的计算展开成向量形式如下：
+$$
+\mathrm{Attention}(Q,K,V) \approx \begin{pmatrix}q_1 \\q_2 \\ \vdots\\q_n\end{pmatrix}\begin{pmatrix}k^T_1, k^T_2,\cdots, k^T_n\end{pmatrix}\begin{pmatrix}v_1 \\v_2 \ \vdots\\v_n\end{pmatrix}\\
+=\begin{pmatrix}q_1k^T_1&amp;&amp;&amp;\\q_2k^T_1&amp;q_2k^T_2&amp;&amp;\\ \vdots&amp;\vdots&amp;\ddots&amp;\\q_nk^T_1&amp;q_nk^T_2&amp;\cdots&amp;q_nk^T_n\end{pmatrix}\begin{pmatrix}v_1 \\v_2 \\ \vdots\\v_n\end{pmatrix}\\
+=\begin{pmatrix}q_1k^T_1v_1 \\q_2k^T_1v_1 + q_2k^T_2v_2 \\ \vdots\\q_nk^T_1v_1 + q_nk^T_2v_2+\cdots+q_nk^T_nv_n\end{pmatrix} \tag{2}
+$$
+注意在上面第二步推导中，$QK^T$是一个下三角矩阵，因为在$\mathrm{round_i}$时，我们仅有$q_j,k_j,v_j$其中$j \leq i$。令$A$表示式子2中的最终结果，$A$的第$i$个行向量$A_i=\sum_{j}^{i}q_ik_j^Tv_j$。</p>
+<p>看到这里，不知道你有没有一种恍然大悟的感觉😉。由于我们在$\mathrm{round_{j &lt; i}}$的过程中，缓存了$k_j,v_j$，那么在$\mathrm{round_i}$时我们只需要再计算一下$k_i,v_i$，复用缓存的key和value便能完成整个Attention的计算。</p>
+<p>这里可以再多扯一下，KV-Cache的<strong>唯一作用</strong>便是避免冗余计算。在Transformer的训练过程中是不存在KV-cache的，因为在训练的过程中，我们将一个句子的前n-1个token喂给模型，将预测得到的token和ground truth做cross-entropy，也就是说在训练过程中是one-shot风格而不是自回归式的，训练代码为证。</p>
+<pre><code class="language-python">for i, batch in enumerate(iterator):
+    src = batch.src
+    trg = batch.trg
+
+    optimizer.zero_grad()
+    output = model(src, trg[:, :-1])
+    output_reshape = output.contiguous().view(-1, output.shape[-1])
+    trg = trg[:, 1:].contiguous().view(-1)
+
+    loss = criterion(output_reshape, trg)
+    loss.backward()
+    torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
+    optimizer.step()
+</code></pre>
+<p>KV-cahe仅存在于推理阶段，而且只存在于decoder中。下图是Transformer结构，在右侧decoder中，Multi-Head Attention模块的Key和Value来自于Encoder的输出，是一次性全部生成好了的，因此我们通常是在让decoder预测前在内存中缓存好encoder的output，作为Key和Value用于cross-Attention的计算。而decoder中的Masked Multi-Head Attention模块便是上文所讲，在逐token的生成中不断缓存key-value。</p>
+<p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202405250937880.png" alt="The full model architecture of the transformer">
+<em>The full model architecture of the transformer. (Image source: Fig 1 &amp; 2 in Vaswani, et al., 2017.)</em></p>
+<h1 id="references">References</h1>
+<ol>
+<li><a href="https://medium.com/@joaolages/kv-caching-explained-276520203249">Transformers KV Caching Explained</a></li>
+<li><a href="https://github.com/hkproj/pytorch-transformer">pytorch-transformer</a></li>
+<li>Ashish Vaswani, et al. <a href="http://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf">“Attention is all you need.”</a> NIPS 2017.</li>
+<li><a href="https://github.com/hyunwoongko/transformer">Transformer: PyTorch Implementation of &ldquo;Attention Is All You Need&rdquo;</a></li>
+</ol>
+
+
+
+<nav class="post-nav fullwidth kai">
+  <span class="nav-prev">&larr; <a href="/posts/2023_summary/">2023 安河桥</a></span>
+  <span class="nav-next">&empty; &rarr;</span>
+</nav>
+
+
+<section class="fullwidth comments">
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yigeng" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+</section>
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+</div>
+  <footer class="small">
+  <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/alt-title.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/ol-id.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
+
+
+
+
+
+
+  
+  
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2024 | <a href="https://github.com/yigengjiang">Github</a></span>
+    <span class="menu-bottom">
+
+
+
+
+
+
+
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href="/search/">Search</a>
+<a href="#">Back to top</a>
+</span>
+  </p>
+  
+  </footer>
+  </body>
+</html>
+
+
+
