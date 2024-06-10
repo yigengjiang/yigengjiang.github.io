@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN"></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>The Design of MetaGPT - Yigeng’s Blog</title>
+    <meta property="og:title" content="The Design of MetaGPT - Yigeng’s Blog">
+    
+    <meta name="twitter:card" content="summary">
+    
+      
+      <meta property="description" content="过去几乎有一年的时间都在做模型压缩，从剪枝到蒸馏再到量化，最后组合压缩。虽然没做出什么成果，但至少觉得自己的代码能力有较大提升，对科研也有更深一层的理解。
+[&amp;hellip;] 到后来做组合压缩的时候，其实认为这不是理想中的科研模式，当时导师让我做的唯一事情就是无论用什么方法，将精度刷到sota。而不是抱着解决实际问题的心态，去探索解决问题，如果在过程中有结果，以论文形式发表。 &amp;hellip;">
+      <meta property="og:description" content="过去几乎有一年的时间都在做模型压缩，从剪枝到蒸馏再到量化，最后组合压缩。虽然没做出什么成果，但至少觉得自己的代码能力有较大提升，对科研也有更深一层的理解。
+[&amp;hellip;] 到后来做组合压缩的时候，其实认为这不是理想中的科研模式，当时导师让我做的唯一事情就是无论用什么方法，将精度刷到sota。而不是抱着解决实际问题的心态，去探索解决问题，如果在过程中有结果，以论文形式发表。 &amp;hellip;">
+      
+    
+
+    
+    
+    
+    <meta name="twitter:image" content="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202406102033371.png">
+    
+    
+
+    
+
+    
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+    
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  </head>
+
+  
+  
+  
+  <body class="single posts">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+    
+      <a href="/">
+      
+      <img src="/images/bird.jpg" alt="至繁归于至简" />
+      
+      </a>
+    
+    </div>
+    <div class="menu"><span><a href="/">Home</a></span>
+      <span><a href="/about/">About</a></span>
+      <span class="active"><a href="/posts/">Archives</a></span>
+      <span><a href="/categories">Categories</a></span>
+      <span><a href="/search/">Search</a></span>
+      <span><a href="/series/">Series</a></span>
+      <span><a href="/tags/">Tags</a></span>
+      <span><a href="/index.xml">RSS</a></span>
+      
+    </div>
+    </nav>
+
+<div class="article-meta">
+<h1 class="title">The Design of MetaGPT</h1>
+
+<h3 class="meta-line">
+  <span>
+
+<span class="author">yigeng</span>
+
+
+
+
+
+
+<span class="date">2024-06-10</span>
+
+
+</span>
+  <span class="term">
+  
+  
+  {<a href="/categories/machine-learning/" class="term-cat">Machine Learning</a>}
+  
+  
+  
+  
+  
+  <a href="/tags/python/" class="term-tag">[Python,</a>
+  
+  <a href="/tags/agent/" class="term-tag">Agent,</a>
+  
+  <a href="/tags/software-engineering/" class="term-tag">Software Engineering]</a>
+  
+  
+  </span>
+</h3>
+</div>
+
+<div class="main">
+
+
+
+
+<p>过去几乎有一年的时间都在做模型压缩，从剪枝到蒸馏再到量化，最后组合压缩。虽然没做出什么成果，但至少觉得自己的代码能力有较大提升，对科研也有更深一层的理解。</p>
+<p>到后来做组合压缩的时候，其实认为这不是理想中的科研模式，当时导师让我做的唯一事情就是无论用什么方法，将精度刷到sota。而不是抱着解决实际问题的心态，去探索解决问题，如果在过程中有结果，以论文形式发表。</p>
+<p>回过头去看，大学为保研、高中为高考、初中为中考&hellip;这一路走来基本以功利主义为导向。研究生希望能够跳出这个循环，去做一些真正感兴趣而且有意义的事情，毕竟很可能以后不做学生了。</p>
+<p>现在，我们进入正题。我的研究方向从模型压缩转到了LLM Agent，估计接下来的时间都会花在LLM Agent上。最近精读了一篇论文<a href="https://openreview.net/pdf?id=VtmBAGCN7o">MetaGPT</a>，我和师兄的想法是会将其作为baseline，在其上进行改进迭代。于是，我打算开一个Serie讲解研究MetaGPT的一些思考。</p>
+<p>MetaGPT是一个Multi-Agent的框架，你将需求传给它，由多个agent模拟成软件公司，以<a href="https://baike.baidu.com/item/%E7%80%91%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91/3404406">瀑布式开发</a>完成你的需求。</p>
+<p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202406102033371.png" alt="image-20240610203312174"></p>
+<p>在这里，你可能会问什么是Agent? 我先不忙给出完整严谨的定义，后续我会写一篇blog专门讨论我们对Agent范式的抽象。</p>
+<p>本文重点讨论MetaGPT的代码设计。因此，你可以暂时将Agent理解为对LLM赋予一个角色，例如你对LLM进行prompt为<code>You are a profession engineer, your goal is to write beautiful codes...</code>，得到prompt后，LLM摇身一变，成为Engineer Agent。</p>
+<p>那么，MetaGPT是如何用代码实现的呢？</p>
+<p>我们先来看一下MetaGPT中类的组织，下图是我将MetaGPT中主要的类提出来，画了一个UML图。</p>
+<p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202406102031245.png" alt="MetaGPT-UML0117">
+<em>The software development SOPs between MetaGPT and real-world human teams. (Image source: Fig 1 in MetaGPT 2023.)</em></p>
+<ol>
+<li><code>team</code>类决定有哪些Role(即Agent)，完成怎样的项目以及项目的投资成本(调LLMAPI需要钱)，并负责启动项目。</li>
+<li><code>Role</code>类则说明一个Role的基本信息，工作模式是怎样的，以及能够做出哪些动作。</li>
+<li><code>Environment</code>类则是为Role之间信息的交流提供一个平台，类似于沟通的桥梁。（是不是有点生产者消费者模式的感觉）</li>
+<li><code>Action</code>类则是对Role能够采取动作的抽象，例如<code>Writecode</code>,<code>WritePRD</code>，而<code>ActionNode1</code>则是对一个动作的拆解，将其分为多个节点。<code>Memory</code>类负责存储Role的历史信息。</li>
+<li>其余的类则是为对应的类提供一些上下文和配置信息。</li>
+</ol>
+<p>了解完MetaGPT的组织，在实际的运行中又是怎样呢？</p>
+<p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202406102032303.png" alt="MetaGPT用例图"></p>
+<p>上图是一个不太严谨的时序图，描述了整个项目的运行过程，大概可分为3个阶段。</p>
+<ol>
+<li>我们将需求<code>idea</code>通过命令行传给程序。</li>
+<li>软件公司将<code>idea</code>发布到环境中，然后遍历所有的Role，每个Role将<code>idea</code>消息放入到消息池中。</li>
+<li>软件公司开始运行整个项目，完成需求。遍历每个Role，Role从消息池中弹出消息，检查是否是自己需要处理的消息，若否则不做任何处理，否则，与LLM交互拿到处理后的结果，封装成消息发布到环境中。</li>
+</ol>
+<p>整个程序终止的条件有两个，分别是超过<code>investment</code>和<code>n_round</code>为0。<code>n_round</code>的值决定了会有多少个Role处理消息，执行动作。在<code>round</code>中，我们会给每个Role一次执行动作的选择权，而瀑布式开发的模式决定了每个消息有且只能由一个Role处理。</p>
+<p>而在具体的实现上，主要依靠两个包，分别是使用<a href="https://docs.python.org/3/library/asyncio.html">asyncio</a>实现并发和利用<a href="https://github.com/pydantic/pydantic">Pydantic</a>实现对数据的组织和封装。</p>
+<p>最后，个人认为MetaGPT项目的代码是写的很漂亮的。对于比较难懂的地方采用了google风格的注释提高了可读性，此外，代码具有良好的模块化设计，对于不同代码文件的组织和封装做得很好。</p>
+<pre><code class="language-python"># 下面是一个google风格注释的例子
+def add_numbers(a, b):
+    &quot;&quot;&quot;
+    Adds two numbers and returns the result.
+
+    Args:
+        a (int): The first number.
+        b (int): The second number.
+
+    Returns:
+        int: The sum of the two numbers.
+
+    Raises:
+        TypeError: If either `a` or `b` is not an integer.
+    &quot;&quot;&quot;
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise TypeError('Both a and b must be integers')
+    return a + b
+
+</code></pre>
+<h1 id="references">References</h1>
+<ol>
+<li><a href="https://openreview.net/pdf?id=VtmBAGCN7o">Hong S, Zheng X, Chen J, et al. Metagpt: Meta programming for multi-agent collaborative framework[J]. arXiv preprint arXiv:2308.00352, 2023.</a></li>
+<li><a href="https://docs.deepwisdom.ai/main/en/rfcs/RFC-116-MetaGPT%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88.html">RFC-116-MetaGPT Role对象间消息机制优化方案</a></li>
+<li><a href="https://docs.deepwisdom.ai/main/en/guide/tutorials/multi_agent_101.html">MultiAgent 101</a></li>
+</ol>
+
+
+
+<nav class="post-nav fullwidth kai">
+  <span class="nav-prev">&larr; <a href="/posts/kv_cache_transformer/">KV Cache in Transformer</a></span>
+  <span class="nav-next">&empty; &rarr;</span>
+</nav>
+
+
+<section class="fullwidth comments">
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yigeng" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+</section>
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+</div>
+  <footer class="small">
+  <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/alt-title.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/ol-id.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
+
+
+
+
+
+
+  
+  
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2024 | <a href="https://github.com/yigengjiang">Github</a></span>
+    <span class="menu-bottom">
+
+
+
+
+
+
+
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href="/search/">Search</a>
+<a href="#">Back to top</a>
+</span>
+  </p>
+  
+  </footer>
+  </body>
+</html>
+
+
+

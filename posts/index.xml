@@ -6,8 +6,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 25 May 2024 10:46:25 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2024 20:38:03 +0800</lastBuildDate>
     <atom:link href="https://yigengjiang.github.io/posts/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Design of MetaGPT</title>
+      <link>https://yigengjiang.github.io/posts/design_of_metagpt/</link>
+      <pubDate>Mon, 10 Jun 2024 20:38:03 +0800</pubDate>
+      <author>yigeng</author>
+      <guid>https://yigengjiang.github.io/posts/design_of_metagpt/</guid>
+      <description>
+        <![CDATA[
+        <p>过去几乎有一年的时间都在做模型压缩，从剪枝到蒸馏再到量化，最后组合压缩。虽然没做出什么成果，但至少觉得自己的代码能力有较大提升，对科研也有更深一层的理解。</p>
+<p>到后来做组合压缩的时候，其实认为这不是理想中[&hellip;] <a href="https://yigengjiang.github.io/posts/design_of_metagpt/">https://yigengjiang.github.io/posts/design_of_metagpt/</a></p>
+        
+        ]]>
+      </description>
+    </item>
+    
     
     
     <item>
@@ -160,23 +177,6 @@
         <![CDATA[
         <p>今年3月份的时候，和朋友约好去看<a href="https://www.douban.com/event/35457786/">莫奈、梵高与现代主义大师真迹展</a><code>下文以莫梵展简称</code>但由于忙毕设和其他事情，所以一直没有去。</p>
 <p>恰好前几天比较有空，并且6月2日博物馆还推出了看展享免费古典乐演奏的体验，于是决[&hellip;] <a href="https://yigengjiang.github.io/posts/digital-traditional-arts/">https://yigengjiang.github.io/posts/digital-traditional-arts/</a></p>
-        
-        ]]>
-      </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>蒙特卡洛近似圆周率的数学原理</title>
-      <link>https://yigengjiang.github.io/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</link>
-      <pubDate>Mon, 22 May 2023 21:23:46 +0800</pubDate>
-      <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</guid>
-      <description>
-        <![CDATA[
-        <p>组内需要我接手做一个强化学习的项目，由于是第一次接触强化学习，很多东西都不懂，于是找了一些相关资料来看。</p>
-<p>在阅读王树森的<a href="https://book.douban.com/subject/36161659/">《深度强化学习》</a>一书中，作者将蒙特卡洛方法作为学习强化学习的基础知识进行了介绍，[&hellip;] <a href="https://yigengjiang.github.io/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/">https://yigengjiang.github.io/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</a></p>
         
         ]]>
       </description>
