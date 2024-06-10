@@ -118,13 +118,13 @@
 <p>回过头去看，大学为保研、高中为高考、初中为中考&hellip;这一路走来基本以功利主义为导向。研究生希望能够跳出这个循环，去做一些真正感兴趣而且有意义的事情，毕竟很可能以后不做学生了。</p>
 <p>现在，我们进入正题。我的研究方向从模型压缩转到了LLM Agent，估计接下来的时间都会花在LLM Agent上。最近精读了一篇论文<a href="https://openreview.net/pdf?id=VtmBAGCN7o">MetaGPT</a>，我和师兄的想法是会将其作为baseline，在其上进行改进迭代。于是，我打算开一个Serie讲解研究MetaGPT的一些思考。</p>
 <p>MetaGPT是一个Multi-Agent的框架，你将需求传给它，由多个agent模拟成软件公司，以<a href="https://baike.baidu.com/item/%E7%80%91%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91/3404406">瀑布式开发</a>完成你的需求。</p>
-<p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202406102033371.png" alt="image-20240610203312174"></p>
+<p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202406102033371.png" alt="image-20240610203312174">
+<em>The software development SOPs between MetaGPT and real-world human teams. (Image source: Fig 1 in MetaGPT 2023.)</em></p>
 <p>在这里，你可能会问什么是Agent? 我先不忙给出完整严谨的定义，后续我会写一篇blog专门讨论我们对Agent范式的抽象。</p>
 <p>本文重点讨论MetaGPT的代码设计。因此，你可以暂时将Agent理解为对LLM赋予一个角色，例如你对LLM进行prompt为<code>You are a profession engineer, your goal is to write beautiful codes...</code>，得到prompt后，LLM摇身一变，成为Engineer Agent。</p>
 <p>那么，MetaGPT是如何用代码实现的呢？</p>
 <p>我们先来看一下MetaGPT中类的组织，下图是我将MetaGPT中主要的类提出来，画了一个UML图。</p>
-<p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202406102031245.png" alt="MetaGPT-UML0117">
-<em>The software development SOPs between MetaGPT and real-world human teams. (Image source: Fig 1 in MetaGPT 2023.)</em></p>
+<p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202406102031245.png" alt="MetaGPT-UML0117"></p>
 <ol>
 <li><code>team</code>类决定有哪些Role(即Agent)，完成怎样的项目以及项目的投资成本(调LLMAPI需要钱)，并负责启动项目。</li>
 <li><code>Role</code>类则说明一个Role的基本信息，工作模式是怎样的，以及能够做出哪些动作。</li>
