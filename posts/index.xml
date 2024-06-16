@@ -6,8 +6,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 10 Jun 2024 20:38:03 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2024 17:33:42 +0800</lastBuildDate>
     <atom:link href="https://yigengjiang.github.io/posts/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>我对优化的认识</title>
+      <link>https://yigengjiang.github.io/posts/summary_convex_optimization/</link>
+      <pubDate>Sun, 16 Jun 2024 17:33:42 +0800</pubDate>
+      <author>yigeng</author>
+      <guid>https://yigengjiang.github.io/posts/summary_convex_optimization/</guid>
+      <description>
+        <![CDATA[
+        <h2 id="introduction">Introduction</h2>
+<p>这学期去蹭了一门课《最优化理论与工程应用》，授课老师是<a href="https://jiangbinlyu.github.io/">吕江滨</a>老师和<a href="https://funlab.xmu.edu.cn/index_chinese/info/1018/1092.htm">付立群</a>老师。个人认为授课质量不错，是xmu值得听的研究生课。课程采用的教材是Stephen Boyd[&hellip;] <a href="https://yigengjiang.github.io/posts/summary_convex_optimization/">https://yigengjiang.github.io/posts/summary_convex_optimization/</a></p>
+        
+        ]]>
+      </description>
+    </item>
+    
     
     
     <item>
@@ -160,23 +177,6 @@
         <p>大学毕业了，四年的时光仅在弹指之间。</p>
 <p>毕业这天真正来临时，自己并没有像电影情节中哭的稀里哗啦的，那样感情爆发，只是很平和地面对这一切，人生的常态大概就是如此吧，人来人往。</p>
 <p>当我参加毕业典礼，坐在位子上[&hellip;] <a href="https://yigengjiang.github.io/posts/graduate-from-zstu/">https://yigengjiang.github.io/posts/graduate-from-zstu/</a></p>
-        
-        ]]>
-      </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>观数字艺术与莫梵展的体会</title>
-      <link>https://yigengjiang.github.io/posts/digital-traditional-arts/</link>
-      <pubDate>Mon, 05 Jun 2023 16:13:37 +0800</pubDate>
-      <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/digital-traditional-arts/</guid>
-      <description>
-        <![CDATA[
-        <p>今年3月份的时候，和朋友约好去看<a href="https://www.douban.com/event/35457786/">莫奈、梵高与现代主义大师真迹展</a><code>下文以莫梵展简称</code>但由于忙毕设和其他事情，所以一直没有去。</p>
-<p>恰好前几天比较有空，并且6月2日博物馆还推出了看展享免费古典乐演奏的体验，于是决[&hellip;] <a href="https://yigengjiang.github.io/posts/digital-traditional-arts/">https://yigengjiang.github.io/posts/digital-traditional-arts/</a></p>
         
         ]]>
       </description>
