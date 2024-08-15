@@ -148,9 +148,9 @@ while decoder_input.size(1) &lt; seq_len:
 <p>了解了Transformer是如何推理的，我们再回到Attention的计算。</p>
 <p>假设从$\mathrm{round_1}$开始模型输入是1个token，在具体的实现上，我们会用Vector向量来表示1个token，正如我们在cv中用矩阵表示图像那样，我们记这个token输入向量为$x_1$，为了方便后续数学表达，当我们定义一个向量时，默认它为行向量，区别于传统线代中默认向量为列向量。</p>
 <p>这里顺便说一下，在Transformer的代码实现上，Attention机制中的$Q_w,K_w,V_w $是一组可学习的权重参数，用<code>nn.Linear</code>来表示的线性层。</p>
-<p>在$\mathrm{round_1}$推理过程中，我们将$x_1$分别和$Q_w,K_w,V_w $相乘得到 $q_1,k_1,v_1$，然后带入到等式1中完成Attention的计算。整个模型forward结束，会得到模型输出的1个token，我们把它记为$q_2$。</p>
-<p>在$\mathrm{round_2}$时，我们将$q_1, q_2$组合作为输入，和$Q_w,K_w,V_w $做矩阵乘得到$k_1,k_2$以及$v_1 v_2 $。</p>
-<p>在$\mathrm{round_n}$时，我们手里有$q_1,q_2,&hellip;q_n$，记$Q=\begin{pmatrix}q_1\\q_2\\ \vdots\\q_n\end{pmatrix}$。我们将$Q$分别与$Q_w,K_w,V_w $相乘得到$K,V$</p>
+<p>在$\mathrm{round_1}$推理过程中，我们将$x_1$分别和$Q_w,K_w,V_w $相乘得到 $q_1,k_1,v_1$，然后带入到等式1中完成Attention的计算。整个模型forward结束，会得到模型输出的1个token，我们把它记为$x_2$。</p>
+<p>在$\mathrm{round_2}$时，我们将$x_1, x_2$组合作为输入，和$Q_w,K_w,V_w $做矩阵乘得到$q_1, q_2$,$k_1,k_2$以及$v_1 v_2 $。</p>
+<p>在$\mathrm{round_n}$时，我们手里有$x_1,x_2,&hellip;x_n$，记$X=\begin{pmatrix}x_1\\x_2\\ \vdots\\x_n\end{pmatrix}$。我们将$X$分别与$Q_w,K_w,V_w $相乘得到$Q,K,V$</p>
 <p>有了$Q,K,V$，我们来看一下Attention的计算，注意Attention计算的关键在于QKV矩阵乘，softmax对每一行元素做归一化，Scaling factor对矩阵中每个元素的value做放缩，总的来说softmax和Scaling factor都只是对矩阵中元素值做放缩。因此，我们忽略softmax和Scaling factor并不会对KV-Cache的理解有影响。那么，Attention的计算展开成向量形式如下：
 $$
 \mathrm{Attention}(Q,K,V) \approx \begin{pmatrix}q_1 \\q_2 \\ \vdots\\q_n\end{pmatrix}\begin{pmatrix}k^T_1, k^T_2,\cdots, k^T_n\end{pmatrix}\begin{pmatrix}v_1 \\v_2 \ \vdots\\v_n\end{pmatrix}\\
