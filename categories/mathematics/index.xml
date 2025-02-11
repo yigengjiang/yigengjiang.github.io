@@ -6,25 +6,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 16 Jun 2024 17:33:42 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Dec 2023 17:58:52 +0800</lastBuildDate>
     <atom:link href="https://yigengjiang.github.io/categories/mathematics/" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>我对优化的认识</title>
-      <link>https://yigengjiang.github.io/posts/summary_convex_optimization/</link>
-      <pubDate>Sun, 16 Jun 2024 17:33:42 +0800</pubDate>
-      <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/summary_convex_optimization/</guid>
-      <description>
-        <![CDATA[
-        <h2 id="introduction">Introduction</h2>
-<p>这学期去蹭了一门课《最优化理论与工程应用》，授课老师是<a href="https://jiangbinlyu.github.io/">吕江滨</a>老师和<a href="https://funlab.xmu.edu.cn/index_chinese/info/1018/1092.htm">付立群</a>老师。个人认为授课质量不错，是xmu值得听的研究生课。课程采用的教材是Stephen Boyd[&hellip;] <a href="https://yigengjiang.github.io/posts/summary_convex_optimization/">https://yigengjiang.github.io/posts/summary_convex_optimization/</a></p>
-        
-        ]]>
-      </description>
-    </item>
-    
     
     
     <item>
