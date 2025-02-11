@@ -114,8 +114,7 @@
 <p>这学期选了一门矩阵论的课，其中有个作业是小组组队科普一些矩阵论的相关应用。我们组选了<a href="https://en.wikipedia.org/wiki/Harris_corner_detector">Harris Corner detection</a>作为报告题目，我负责代码实现部分，花时间整理了下这方面的东西，感觉角点检测还是蛮有意思的，主要是没想到矩阵论在cv处理中还可以这么用。<code>T_T</code></p>
 <p>对于灰度图上某点，如果该点在进行微小移动后灰度变化很大，这意味着该点的亮度或颜色深浅变化显著。这种显著的灰度变化通常发生在图像中的角点corner。</p>
 <blockquote>
-<p>“灰度”是指图像中每个像素点的亮度或颜色深浅。在数字图像处理中，灰度图是一种特殊的图像，其中每个像素仅包含灰度信息，而不包含颜色信息。灰度值通常是从0（纯黑）到255（纯白）的整数，表示不同的亮度级别。在代码中，我们通常将RGB三通道的像素值取平均，最后得到的单通道图像便为灰度图。</p>
-</blockquote>
+<p>“灰度”是指图像中每个像素点的亮度或颜色深浅。在数字图像处理中，灰度图是一种特殊的图像，其中每个像素仅包含灰度信息，而不包含颜色信息。灰度值通常是从0（纯黑）到255（纯白）的整数，表示不同的亮度级别。在代码中，我们通常将RGB三通道的像素值取平均，最后得到的单通道图像便为灰度图。</p></blockquote>
 <p>注意，上面所说的“微小的移动”是指在<strong>某个区域内沿任意方向移动</strong>均会引起灰度变化。以下图为例，在1区域想象有个滑动窗口从下往上，移动越过红线，这时也会引起灰度变化，那么是否能判断它就是角点呢？答案是否定的。</p>
 <p>因为，滑动窗口在红框1的位置左右移动，并不会引起灰度变化。但这时如果我们考虑2区域这个交点，可以发现无论是上下或者左右移动均会引起灰度的变化，或者是沿2红框的对角线等各个方向均会引起较大的灰度变化，因此我们能够判断交点处为角点。</p>
 <p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202312191737177.png" alt="image-20231219173753191"></p>
@@ -145,8 +144,7 @@ R=\lambda_1\lambda_2-k\left(\lambda_1+\lambda_2\right)^2. \tag{6}
 $$
 其中$k$是常数，一般取到$[0.04,0.06]$之间</p>
 <blockquote>
-<p>The so-called Harris Corner Detector was introduced by Chris Harris and Mike Stephens in 1988 in the paper <a href="https://bmva-archive.org.uk/bmvc/1988/avc-88-023.pdf">“A Combined Corner and Edge Detector”</a>.</p>
-</blockquote>
+<p>The so-called Harris Corner Detector was introduced by Chris Harris and Mike Stephens in 1988 in the paper <a href="https://bmva-archive.org.uk/bmvc/1988/avc-88-023.pdf">“A Combined Corner and Edge Detector”</a>.</p></blockquote>
 <p>因此，我们可以根据结构张量的特征值大小来判断是否包含corner，下图非常形象地说明了这一点：</p>
 <p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202312191508894.png" alt="Classification of image points" title="图片来自于参考文献2"></p>
 <p>当$\lambda_1\approx\lambda_2$，且都比较大时$R$会比较大，这时可判断存在corner；当$\lambda_1 	\gg \lambda_2$，$R &lt; 0$，存在edge；当二者都比较小时，$|R|$较很小，不存在edge或者corner。</p>
@@ -266,7 +264,7 @@ $$
   <hr/>
   
   <p class="nav-bottom">
-    <span>© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2024 | <a href="https://github.com/yigengjiang">Github</a></span>
+    <span>© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2025 | <a href="https://github.com/yigengjiang">Github</a></span>
     <span class="menu-bottom">
 
 
