@@ -2,129 +2,129 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/2024_summary/</loc>
+    <loc>https://yigengjiang.github.io/posts/2024_summary/</loc>
     <lastmod>2025-02-10T19:30:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://yigengjiang.github.io/categories/</loc>
     <lastmod>2025-02-10T19:30:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://yigengjiang.github.io/</loc>
     <lastmod>2025-02-10T19:30:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/life/</loc>
+    <loc>https://yigengjiang.github.io/categories/life/</loc>
     <lastmod>2025-02-10T19:30:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://yigengjiang.github.io/posts/</loc>
     <lastmod>2025-02-10T19:30:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://yigengjiang.github.io/series/</loc>
     <lastmod>2025-02-10T19:30:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
+    <loc>https://yigengjiang.github.io/series/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2025-02-10T19:30:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/agent/</loc>
+    <loc>https://yigengjiang.github.io/tags/agent/</loc>
     <lastmod>2024-06-10T20:38:03+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/machine-learning/</loc>
+    <loc>https://yigengjiang.github.io/categories/machine-learning/</loc>
     <lastmod>2024-06-10T20:38:03+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/metagpt/</loc>
+    <loc>https://yigengjiang.github.io/series/metagpt/</loc>
     <lastmod>2024-06-10T20:38:03+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>https://yigengjiang.github.io/tags/python/</loc>
     <lastmod>2024-06-10T20:38:03+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/software-engineering/</loc>
+    <loc>https://yigengjiang.github.io/tags/software-engineering/</loc>
     <lastmod>2024-06-10T20:38:03+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://yigengjiang.github.io/tags/</loc>
     <lastmod>2024-06-10T20:38:03+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/design_of_metagpt/</loc>
+    <loc>https://yigengjiang.github.io/posts/design_of_metagpt/</loc>
     <lastmod>2024-06-10T20:38:03+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/kv_cache_transformer/</loc>
+    <loc>https://yigengjiang.github.io/posts/kv_cache_transformer/</loc>
     <lastmod>2024-05-25T10:46:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/transformer/</loc>
+    <loc>https://yigengjiang.github.io/tags/transformer/</loc>
     <lastmod>2024-05-25T10:46:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2023_summary/</loc>
+    <loc>https://yigengjiang.github.io/posts/2023_summary/</loc>
     <lastmod>2024-01-12T19:43:44+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/harris_corner_detection/</loc>
+    <loc>https://yigengjiang.github.io/posts/harris_corner_detection/</loc>
     <lastmod>2023-12-19T17:58:52+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/computer-vision/</loc>
+    <loc>https://yigengjiang.github.io/tags/computer-vision/</loc>
     <lastmod>2023-12-19T17:58:52+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/mathematics/</loc>
+    <loc>https://yigengjiang.github.io/categories/mathematics/</loc>
     <lastmod>2023-12-19T17:58:52+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/matrix-theory/</loc>
+    <loc>https://yigengjiang.github.io/tags/matrix-theory/</loc>
     <lastmod>2023-12-19T17:58:52+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/bugs/</loc>
+    <loc>https://yigengjiang.github.io/categories/bugs/</loc>
     <lastmod>2023-10-10T21:15:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/deep-learning/</loc>
+    <loc>https://yigengjiang.github.io/tags/deep-learning/</loc>
     <lastmod>2023-10-10T21:15:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/solution_cannot_load_so/</loc>
+    <loc>https://yigengjiang.github.io/posts/solution_cannot_load_so/</loc>
     <lastmod>2023-10-10T21:15:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/chinese-traditional-culture/</loc>
+    <loc>https://yigengjiang.github.io/tags/chinese-traditional-culture/</loc>
     <lastmod>2023-09-30T20:18:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/computer-science/</loc>
+    <loc>https://yigengjiang.github.io/tags/computer-science/</loc>
     <lastmod>2023-09-30T20:18:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/thoughts/</loc>
+    <loc>https://yigengjiang.github.io/categories/thoughts/</loc>
     <lastmod>2023-09-30T20:18:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/higher_education_of_computer_science/</loc>
+    <loc>https://yigengjiang.github.io/posts/higher_education_of_computer_science/</loc>
     <lastmod>2023-09-30T20:18:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/develop/</loc>
+    <loc>https://yigengjiang.github.io/categories/develop/</loc>
     <lastmod>2023-08-25T20:23:53+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gpu/</loc>
+    <loc>https://yigengjiang.github.io/tags/gpu/</loc>
     <lastmod>2023-08-25T20:23:53+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/the_art_of_gpu_occupation/</loc>
+    <loc>https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/</loc>
     <lastmod>2023-08-25T20:23:53+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/zhixin-academy-2023summer/</loc>
+    <loc>https://yigengjiang.github.io/posts/zhixin-academy-2023summer/</loc>
     <lastmod>2023-07-19T17:55:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/student/</loc>
+    <loc>https://yigengjiang.github.io/tags/student/</loc>
     <lastmod>2023-06-17T11:48:50+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/graduate-from-zstu/</loc>
+    <loc>https://yigengjiang.github.io/posts/graduate-from-zstu/</loc>
     <lastmod>2023-06-17T11:48:50+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/art/</loc>
+    <loc>https://yigengjiang.github.io/tags/art/</loc>
     <lastmod>2023-06-05T16:13:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/digital-traditional-arts/</loc>
+    <loc>https://yigengjiang.github.io/posts/digital-traditional-arts/</loc>
     <lastmod>2023-06-05T16:13:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/monte-carlo/</loc>
+    <loc>https://yigengjiang.github.io/tags/monte-carlo/</loc>
     <lastmod>2023-05-22T21:23:46+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/reinforcement-learning/</loc>
+    <loc>https://yigengjiang.github.io/tags/reinforcement-learning/</loc>
     <lastmod>2023-05-22T21:23:46+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</loc>
+    <loc>https://yigengjiang.github.io/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E8%BF%91%E4%BC%BC%E5%9C%86%E5%91%A8%E7%8E%87/</loc>
     <lastmod>2023-05-22T21:23:46+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/learning-with-minibbatch/</loc>
+    <loc>https://yigengjiang.github.io/posts/learning-with-minibbatch/</loc>
     <lastmod>2023-03-22T18:22:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://yigengjiang.github.io/about/</loc>
     <lastmod>2022-10-04T20:39:05+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://yigengjiang.github.io/search/</loc>
   </url>
 </urlset>

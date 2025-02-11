@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Transformer on Yigeng’s Blog</title>
-    <link>http://localhost:1313/tags/transformer/</link>
+    <link>https://yigengjiang.github.io/tags/transformer/</link>
     <description>Recent content in Transformer on Yigeng’s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 25 May 2024 10:46:25 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/transformer/" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yigengjiang.github.io/tags/transformer/" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>KV Cache in Transformer</title>
-      <link>http://localhost:1313/posts/kv_cache_transformer/</link>
+      <link>https://yigengjiang.github.io/posts/kv_cache_transformer/</link>
       <pubDate>Sat, 25 May 2024 10:46:25 +0800</pubDate>
       <author>yigeng</author>
-      <guid>http://localhost:1313/posts/kv_cache_transformer/</guid>
+      <guid>https://yigengjiang.github.io/posts/kv_cache_transformer/</guid>
       <description>
         <![CDATA[
-        <p>最近在研究Transformer，经常碰到KV-Cache，每次都要去查一下才能回想起来这个东西。但稍微研究了一下，觉得kv-cache从数学上来说是非常显然的，在这里总结一下我对kv-cache的理[&hellip;] <a href="http://localhost:1313/posts/kv_cache_transformer/">http://localhost:1313/posts/kv_cache_transformer/</a></p>
+        <p>最近在研究Transformer，经常碰到KV-Cache，每次都要去查一下才能回想起来这个东西。但稍微研究了一下，觉得kv-cache从数学上来说是非常显然的，在这里总结一下我对kv-cache的理[&hellip;] <a href="https://yigengjiang.github.io/posts/kv_cache_transformer/">https://yigengjiang.github.io/posts/kv_cache_transformer/</a></p>
         
         ]]>
       </description>

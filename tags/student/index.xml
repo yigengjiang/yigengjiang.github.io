@@ -1,26 +1,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Student on Yigeng’s Blog</title>
-    <link>http://localhost:1313/tags/student/</link>
+    <link>https://yigengjiang.github.io/tags/student/</link>
     <description>Recent content in Student on Yigeng’s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 17 Jun 2023 11:48:50 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/student/" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yigengjiang.github.io/tags/student/" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>毕业了</title>
-      <link>http://localhost:1313/posts/graduate-from-zstu/</link>
+      <link>https://yigengjiang.github.io/posts/graduate-from-zstu/</link>
       <pubDate>Sat, 17 Jun 2023 11:48:50 +0800</pubDate>
       <author>yigeng</author>
-      <guid>http://localhost:1313/posts/graduate-from-zstu/</guid>
+      <guid>https://yigengjiang.github.io/posts/graduate-from-zstu/</guid>
       <description>
         <![CDATA[
         <p>大学毕业了，四年的时光仅在弹指之间。</p>
 <p>毕业这天真正来临时，自己并没有像电影情节中哭的稀里哗啦的，那样感情爆发，只是很平和地面对这一切，人生的常态大概就是如此吧，人来人往。</p>
-<p>当我参加毕业典礼，坐在位子上[&hellip;] <a href="http://localhost:1313/posts/graduate-from-zstu/">http://localhost:1313/posts/graduate-from-zstu/</a></p>
+<p>当我参加毕业典礼，坐在位子上[&hellip;] <a href="https://yigengjiang.github.io/posts/graduate-from-zstu/">https://yigengjiang.github.io/posts/graduate-from-zstu/</a></p>
         
         ]]>
       </description>

@@ -1,25 +1,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine Learning on Yigeng’s Blog</title>
-    <link>http://localhost:1313/categories/machine-learning/</link>
+    <link>https://yigengjiang.github.io/categories/machine-learning/</link>
     <description>Recent content in Machine Learning on Yigeng’s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 10 Jun 2024 20:38:03 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/machine-learning/" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yigengjiang.github.io/categories/machine-learning/" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Design of MetaGPT</title>
-      <link>http://localhost:1313/posts/design_of_metagpt/</link>
+      <link>https://yigengjiang.github.io/posts/design_of_metagpt/</link>
       <pubDate>Mon, 10 Jun 2024 20:38:03 +0800</pubDate>
       <author>yigeng</author>
-      <guid>http://localhost:1313/posts/design_of_metagpt/</guid>
+      <guid>https://yigengjiang.github.io/posts/design_of_metagpt/</guid>
       <description>
         <![CDATA[
         <p>过去几乎有一年的时间都在做模型压缩，从剪枝到蒸馏再到量化，最后组合压缩。虽然没做出什么成果，但至少觉得自己的代码能力有较大提升，对科研也有更深一层的理解。</p>
-<p>到后来做组合压缩的时候，其实认为这不是理想中[&hellip;] <a href="http://localhost:1313/posts/design_of_metagpt/">http://localhost:1313/posts/design_of_metagpt/</a></p>
+<p>到后来做组合压缩的时候，其实认为这不是理想中[&hellip;] <a href="https://yigengjiang.github.io/posts/design_of_metagpt/">https://yigengjiang.github.io/posts/design_of_metagpt/</a></p>
         
         ]]>
       </description>
@@ -29,13 +29,13 @@
     
     <item>
       <title>KV Cache in Transformer</title>
-      <link>http://localhost:1313/posts/kv_cache_transformer/</link>
+      <link>https://yigengjiang.github.io/posts/kv_cache_transformer/</link>
       <pubDate>Sat, 25 May 2024 10:46:25 +0800</pubDate>
       <author>yigeng</author>
-      <guid>http://localhost:1313/posts/kv_cache_transformer/</guid>
+      <guid>https://yigengjiang.github.io/posts/kv_cache_transformer/</guid>
       <description>
         <![CDATA[
-        <p>最近在研究Transformer，经常碰到KV-Cache，每次都要去查一下才能回想起来这个东西。但稍微研究了一下，觉得kv-cache从数学上来说是非常显然的，在这里总结一下我对kv-cache的理[&hellip;] <a href="http://localhost:1313/posts/kv_cache_transformer/">http://localhost:1313/posts/kv_cache_transformer/</a></p>
+        <p>最近在研究Transformer，经常碰到KV-Cache，每次都要去查一下才能回想起来这个东西。但稍微研究了一下，觉得kv-cache从数学上来说是非常显然的，在这里总结一下我对kv-cache的理[&hellip;] <a href="https://yigengjiang.github.io/posts/kv_cache_transformer/">https://yigengjiang.github.io/posts/kv_cache_transformer/</a></p>
         
         ]]>
       </description>
@@ -45,14 +45,14 @@
     
     <item>
       <title>Learning with Mini-Batch</title>
-      <link>http://localhost:1313/posts/learning-with-minibbatch/</link>
+      <link>https://yigengjiang.github.io/posts/learning-with-minibbatch/</link>
       <pubDate>Wed, 22 Mar 2023 18:22:16 +0800</pubDate>
       <author>yigeng</author>
-      <guid>http://localhost:1313/posts/learning-with-minibbatch/</guid>
+      <guid>https://yigengjiang.github.io/posts/learning-with-minibbatch/</guid>
       <description>
         <![CDATA[
         <h1 id="前言">前言</h1>
-<p>最近在看一些深度学习相关的书，感觉对于参考文献1中的mini-batch部分理解得不是很透彻，主要是因为神经网络的输入开始变成批数据，加之对python的numpy不是很熟了。所以总想写点什么，[&hellip;] <a href="http://localhost:1313/posts/learning-with-minibbatch/">http://localhost:1313/posts/learning-with-minibbatch/</a></p>
+<p>最近在看一些深度学习相关的书，感觉对于参考文献1中的mini-batch部分理解得不是很透彻，主要是因为神经网络的输入开始变成批数据，加之对python的numpy不是很熟了。所以总想写点什么，[&hellip;] <a href="https://yigengjiang.github.io/posts/learning-with-minibbatch/">https://yigengjiang.github.io/posts/learning-with-minibbatch/</a></p>
         
         ]]>
       </description>

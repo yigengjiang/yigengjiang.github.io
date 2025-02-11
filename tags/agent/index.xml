@@ -1,25 +1,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Agent on Yigeng’s Blog</title>
-    <link>http://localhost:1313/tags/agent/</link>
+    <link>https://yigengjiang.github.io/tags/agent/</link>
     <description>Recent content in Agent on Yigeng’s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 10 Jun 2024 20:38:03 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/agent/" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yigengjiang.github.io/tags/agent/" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Design of MetaGPT</title>
-      <link>http://localhost:1313/posts/design_of_metagpt/</link>
+      <link>https://yigengjiang.github.io/posts/design_of_metagpt/</link>
       <pubDate>Mon, 10 Jun 2024 20:38:03 +0800</pubDate>
       <author>yigeng</author>
-      <guid>http://localhost:1313/posts/design_of_metagpt/</guid>
+      <guid>https://yigengjiang.github.io/posts/design_of_metagpt/</guid>
       <description>
         <![CDATA[
         <p>过去几乎有一年的时间都在做模型压缩，从剪枝到蒸馏再到量化，最后组合压缩。虽然没做出什么成果，但至少觉得自己的代码能力有较大提升，对科研也有更深一层的理解。</p>
-<p>到后来做组合压缩的时候，其实认为这不是理想中[&hellip;] <a href="http://localhost:1313/posts/design_of_metagpt/">http://localhost:1313/posts/design_of_metagpt/</a></p>
+<p>到后来做组合压缩的时候，其实认为这不是理想中[&hellip;] <a href="https://yigengjiang.github.io/posts/design_of_metagpt/">https://yigengjiang.github.io/posts/design_of_metagpt/</a></p>
         
         ]]>
       </description>
