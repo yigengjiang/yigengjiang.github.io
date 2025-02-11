@@ -1,25 +1,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Develop on Yigeng’s Blog</title>
-    <link>https://yigengjiang.github.io/categories/develop/</link>
+    <link>http://localhost:1313/categories/develop/</link>
     <description>Recent content in Develop on Yigeng’s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 25 Aug 2023 20:23:53 +0800</lastBuildDate>
-    <atom:link href="https://yigengjiang.github.io/categories/develop/" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/develop/" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Art of GPU Occupation</title>
-      <link>https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/</link>
+      <link>http://localhost:1313/posts/the_art_of_gpu_occupation/</link>
       <pubDate>Fri, 25 Aug 2023 20:23:53 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/</guid>
+      <guid>http://localhost:1313/posts/the_art_of_gpu_occupation/</guid>
       <description>
         <![CDATA[
         <p>I have been developing <a href="https://informatics.xmu.edu.cn/info/1053/28969.htm">2030 project</a> almost more than one month.</p>
-<p>I primarily focus on analysing and[&hellip;] <a href="https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/">https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/</a></p>
+<p>I primarily focus on analysing and[&hellip;] <a href="http://localhost:1313/posts/the_art_of_gpu_occupation/">http://localhost:1313/posts/the_art_of_gpu_occupation/</a></p>
         
         ]]>
       </description>

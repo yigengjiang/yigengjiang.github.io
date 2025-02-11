@@ -1,25 +1,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Art on Yigeng’s Blog</title>
-    <link>https://yigengjiang.github.io/tags/art/</link>
+    <link>http://localhost:1313/tags/art/</link>
     <description>Recent content in Art on Yigeng’s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 05 Jun 2023 16:13:37 +0800</lastBuildDate>
-    <atom:link href="https://yigengjiang.github.io/tags/art/" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/art/" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>观数字艺术与莫梵展的体会</title>
-      <link>https://yigengjiang.github.io/posts/digital-traditional-arts/</link>
+      <link>http://localhost:1313/posts/digital-traditional-arts/</link>
       <pubDate>Mon, 05 Jun 2023 16:13:37 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/digital-traditional-arts/</guid>
+      <guid>http://localhost:1313/posts/digital-traditional-arts/</guid>
       <description>
         <![CDATA[
         <p>今年3月份的时候，和朋友约好去看<a href="https://www.douban.com/event/35457786/">莫奈、梵高与现代主义大师真迹展</a><code>下文以莫梵展简称</code>但由于忙毕设和其他事情，所以一直没有去。</p>
-<p>恰好前几天比较有空，并且6月2日博物馆还推出了看展享免费古典乐演奏的体验，于是决[&hellip;] <a href="https://yigengjiang.github.io/posts/digital-traditional-arts/">https://yigengjiang.github.io/posts/digital-traditional-arts/</a></p>
+<p>恰好前几天比较有空，并且6月2日博物馆还推出了看展享免费古典乐演奏的体验，于是决[&hellip;] <a href="http://localhost:1313/posts/digital-traditional-arts/">http://localhost:1313/posts/digital-traditional-arts/</a></p>
         
         ]]>
       </description>

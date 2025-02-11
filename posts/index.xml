@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Yigeng’s Blog</title>
-    <link>https://yigengjiang.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Yigeng’s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 10 Feb 2025 19:30:55 +0800</lastBuildDate>
-    <atom:link href="https://yigengjiang.github.io/posts/" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>2024 世界赠予我的</title>
-      <link>https://yigengjiang.github.io/posts/2024_summary/</link>
+      <link>http://localhost:1313/posts/2024_summary/</link>
       <pubDate>Mon, 10 Feb 2025 19:30:55 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/2024_summary/</guid>
+      <guid>http://localhost:1313/posts/2024_summary/</guid>
       <description>
         <![CDATA[
         <center>
@@ -24,7 +24,7 @@
 赠我一场病 又慢慢痊愈摇风铃<br />
 赠我一场空 又渐渐填满真感情<br />
 </p></center>
-<p>2025 年春晚，碰巧遇见菲姐时隔七年登春晚献唱新歌👏，所以 2024 [&hellip;] <a href="https://yigengjiang.github.io/posts/2024_summary/">https://yigengjiang.github.io/posts/2024_summary/</a></p>
+<p>2025 年春晚，碰巧遇见菲姐时隔七年登春晚献唱新歌👏，所以 2024 [&hellip;] <a href="http://localhost:1313/posts/2024_summary/">http://localhost:1313/posts/2024_summary/</a></p>
         
         ]]>
       </description>
@@ -34,14 +34,14 @@
     
     <item>
       <title>The Design of MetaGPT</title>
-      <link>https://yigengjiang.github.io/posts/design_of_metagpt/</link>
+      <link>http://localhost:1313/posts/design_of_metagpt/</link>
       <pubDate>Mon, 10 Jun 2024 20:38:03 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/design_of_metagpt/</guid>
+      <guid>http://localhost:1313/posts/design_of_metagpt/</guid>
       <description>
         <![CDATA[
         <p>过去几乎有一年的时间都在做模型压缩，从剪枝到蒸馏再到量化，最后组合压缩。虽然没做出什么成果，但至少觉得自己的代码能力有较大提升，对科研也有更深一层的理解。</p>
-<p>到后来做组合压缩的时候，其实认为这不是理想中[&hellip;] <a href="https://yigengjiang.github.io/posts/design_of_metagpt/">https://yigengjiang.github.io/posts/design_of_metagpt/</a></p>
+<p>到后来做组合压缩的时候，其实认为这不是理想中[&hellip;] <a href="http://localhost:1313/posts/design_of_metagpt/">http://localhost:1313/posts/design_of_metagpt/</a></p>
         
         ]]>
       </description>
@@ -51,13 +51,13 @@
     
     <item>
       <title>KV Cache in Transformer</title>
-      <link>https://yigengjiang.github.io/posts/kv_cache_transformer/</link>
+      <link>http://localhost:1313/posts/kv_cache_transformer/</link>
       <pubDate>Sat, 25 May 2024 10:46:25 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/kv_cache_transformer/</guid>
+      <guid>http://localhost:1313/posts/kv_cache_transformer/</guid>
       <description>
         <![CDATA[
-        <p>最近在研究Transformer，经常碰到KV-Cache，每次都要去查一下才能回想起来这个东西。但稍微研究了一下，觉得kv-cache从数学上来说是非常显然的，在这里总结一下我对kv-cache的理[&hellip;] <a href="https://yigengjiang.github.io/posts/kv_cache_transformer/">https://yigengjiang.github.io/posts/kv_cache_transformer/</a></p>
+        <p>最近在研究Transformer，经常碰到KV-Cache，每次都要去查一下才能回想起来这个东西。但稍微研究了一下，觉得kv-cache从数学上来说是非常显然的，在这里总结一下我对kv-cache的理[&hellip;] <a href="http://localhost:1313/posts/kv_cache_transformer/">http://localhost:1313/posts/kv_cache_transformer/</a></p>
         
         ]]>
       </description>
@@ -67,17 +67,17 @@
     
     <item>
       <title>2023 安河桥</title>
-      <link>https://yigengjiang.github.io/posts/2023_summary/</link>
+      <link>http://localhost:1313/posts/2023_summary/</link>
       <pubDate>Fri, 12 Jan 2024 19:43:44 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/2023_summary/</guid>
+      <guid>http://localhost:1313/posts/2023_summary/</guid>
       <description>
         <![CDATA[
         <center>
   <p style="font-style:italic">我知道 那些夏天<br />
 就像青春一样回不来<br />
   代替梦想的只能是勉为其难</p></center>
-<p>从今年开始，我打算每年写一次年度总结，对昨年自己的学习生活进行梳理总结，希望能够对未来带来一些启示。而年度总结的标题，如果每次[&hellip;] <a href="https://yigengjiang.github.io/posts/2023_summary/">https://yigengjiang.github.io/posts/2023_summary/</a></p>
+<p>从今年开始，我打算每年写一次年度总结，对昨年自己的学习生活进行梳理总结，希望能够对未来带来一些启示。而年度总结的标题，如果每次[&hellip;] <a href="http://localhost:1313/posts/2023_summary/">http://localhost:1313/posts/2023_summary/</a></p>
         
         ]]>
       </description>
@@ -87,13 +87,13 @@
     
     <item>
       <title>An Application in Matrix Theory:Harris Corner Detection</title>
-      <link>https://yigengjiang.github.io/posts/harris_corner_detection/</link>
+      <link>http://localhost:1313/posts/harris_corner_detection/</link>
       <pubDate>Tue, 19 Dec 2023 17:58:52 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/harris_corner_detection/</guid>
+      <guid>http://localhost:1313/posts/harris_corner_detection/</guid>
       <description>
         <![CDATA[
-        <p>这学期选了一门矩阵论的课，其中有个作业是小组组队科普一些矩阵论的相关应用。我们组选了<a href="https://en.wikipedia.org/wiki/Harris_corner_detector">Harris Corner detection</a>作为报告题目，我负责代码实现部分，花时间整理了下这方面的东西，感觉角点[&hellip;] <a href="https://yigengjiang.github.io/posts/harris_corner_detection/">https://yigengjiang.github.io/posts/harris_corner_detection/</a></p>
+        <p>这学期选了一门矩阵论的课，其中有个作业是小组组队科普一些矩阵论的相关应用。我们组选了<a href="https://en.wikipedia.org/wiki/Harris_corner_detector">Harris Corner detection</a>作为报告题目，我负责代码实现部分，花时间整理了下这方面的东西，感觉角点[&hellip;] <a href="http://localhost:1313/posts/harris_corner_detection/">http://localhost:1313/posts/harris_corner_detection/</a></p>
         
         ]]>
       </description>
@@ -103,15 +103,15 @@
     
     <item>
       <title>报错Cannot load *.so可能通用的解决方法</title>
-      <link>https://yigengjiang.github.io/posts/solution_cannot_load_so/</link>
+      <link>http://localhost:1313/posts/solution_cannot_load_so/</link>
       <pubDate>Tue, 10 Oct 2023 21:15:32 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/solution_cannot_load_so/</guid>
+      <guid>http://localhost:1313/posts/solution_cannot_load_so/</guid>
       <description>
         <![CDATA[
         <p>今天上80服务器跑mdistiller的代码时，意外发现<code>torch</code>、<code>numpy</code>都不能用了T_T</p>
 <p>导入<code>torch</code>、<code>numpy</code>库时出现如下报错情况</p>
-<pre><code class="language-bash">sh: 0: getcwd() failed: No[&hellip;] <a href="https://yigengjiang.github.io/posts/solution_cannot_load_so/">https://yigengjiang.github.io/posts/solution_cannot_load_so/</a></code></pre>
+<pre><code class="language-bash">sh: 0: getcwd() failed: No[&hellip;] <a href="http://localhost:1313/posts/solution_cannot_load_so/">http://localhost:1313/posts/solution_cannot_load_so/</a></code></pre>
         
         ]]>
       </description>
@@ -121,15 +121,15 @@
     
     <item>
       <title>信息学科的大学之道</title>
-      <link>https://yigengjiang.github.io/posts/higher_education_of_computer_science/</link>
+      <link>http://localhost:1313/posts/higher_education_of_computer_science/</link>
       <pubDate>Sat, 30 Sep 2023 20:18:34 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/higher_education_of_computer_science/</guid>
+      <guid>http://localhost:1313/posts/higher_education_of_computer_science/</guid>
       <description>
         <![CDATA[
         <p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202309301746357.png" alt="image-20230930174619560" title="有意境的封面图"></p>
 <p>梅贻琦先生有句名言：“所谓大学之大，非有大楼之谓也，乃有大师之谓也。”实际上，我们并没有对“大师”做出一个统一标准的定义，人人心中都有自己的大师。但我认为大师讲课至少会给人以启发和深思。</p>
-<p>研一开学，[&hellip;] <a href="https://yigengjiang.github.io/posts/higher_education_of_computer_science/">https://yigengjiang.github.io/posts/higher_education_of_computer_science/</a></p>
+<p>研一开学，[&hellip;] <a href="http://localhost:1313/posts/higher_education_of_computer_science/">http://localhost:1313/posts/higher_education_of_computer_science/</a></p>
         
         ]]>
       </description>
@@ -139,14 +139,14 @@
     
     <item>
       <title>The Art of GPU Occupation</title>
-      <link>https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/</link>
+      <link>http://localhost:1313/posts/the_art_of_gpu_occupation/</link>
       <pubDate>Fri, 25 Aug 2023 20:23:53 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/</guid>
+      <guid>http://localhost:1313/posts/the_art_of_gpu_occupation/</guid>
       <description>
         <![CDATA[
         <p>I have been developing <a href="https://informatics.xmu.edu.cn/info/1053/28969.htm">2030 project</a> almost more than one month.</p>
-<p>I primarily focus on analysing and[&hellip;] <a href="https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/">https://yigengjiang.github.io/posts/the_art_of_gpu_occupation/</a></p>
+<p>I primarily focus on analysing and[&hellip;] <a href="http://localhost:1313/posts/the_art_of_gpu_occupation/">http://localhost:1313/posts/the_art_of_gpu_occupation/</a></p>
         
         ]]>
       </description>
@@ -156,14 +156,14 @@
     
     <item>
       <title>癸卯年志心青年立心营纪录与感想</title>
-      <link>https://yigengjiang.github.io/posts/zhixin-academy-2023summer/</link>
+      <link>http://localhost:1313/posts/zhixin-academy-2023summer/</link>
       <pubDate>Wed, 19 Jul 2023 17:55:16 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/zhixin-academy-2023summer/</guid>
+      <guid>http://localhost:1313/posts/zhixin-academy-2023summer/</guid>
       <description>
         <![CDATA[
         <p>我于2023年7月5日-7月9日在杭州桐庐志心书院参加为期5天的<a href="https://mp.weixin.qq.com/s/938iY1tuAcFZnj8_Oa48Ww">青年立心营</a>，有些感想，遂成此文。</p>
-<p>我是在大三上的幸福学课上知道志心书院的，当时课堂的实践作业选项之一是来志心当志愿者。但由于疫情以及个人[&hellip;] <a href="https://yigengjiang.github.io/posts/zhixin-academy-2023summer/">https://yigengjiang.github.io/posts/zhixin-academy-2023summer/</a></p>
+<p>我是在大三上的幸福学课上知道志心书院的，当时课堂的实践作业选项之一是来志心当志愿者。但由于疫情以及个人[&hellip;] <a href="http://localhost:1313/posts/zhixin-academy-2023summer/">http://localhost:1313/posts/zhixin-academy-2023summer/</a></p>
         
         ]]>
       </description>
@@ -173,15 +173,15 @@
     
     <item>
       <title>毕业了</title>
-      <link>https://yigengjiang.github.io/posts/graduate-from-zstu/</link>
+      <link>http://localhost:1313/posts/graduate-from-zstu/</link>
       <pubDate>Sat, 17 Jun 2023 11:48:50 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/graduate-from-zstu/</guid>
+      <guid>http://localhost:1313/posts/graduate-from-zstu/</guid>
       <description>
         <![CDATA[
         <p>大学毕业了，四年的时光仅在弹指之间。</p>
 <p>毕业这天真正来临时，自己并没有像电影情节中哭的稀里哗啦的，那样感情爆发，只是很平和地面对这一切，人生的常态大概就是如此吧，人来人往。</p>
-<p>当我参加毕业典礼，坐在位子上[&hellip;] <a href="https://yigengjiang.github.io/posts/graduate-from-zstu/">https://yigengjiang.github.io/posts/graduate-from-zstu/</a></p>
+<p>当我参加毕业典礼，坐在位子上[&hellip;] <a href="http://localhost:1313/posts/graduate-from-zstu/">http://localhost:1313/posts/graduate-from-zstu/</a></p>
         
         ]]>
       </description>

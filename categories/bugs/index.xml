@@ -1,26 +1,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bugs on Yigeng’s Blog</title>
-    <link>https://yigengjiang.github.io/categories/bugs/</link>
+    <link>http://localhost:1313/categories/bugs/</link>
     <description>Recent content in Bugs on Yigeng’s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 10 Oct 2023 21:15:32 +0800</lastBuildDate>
-    <atom:link href="https://yigengjiang.github.io/categories/bugs/" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/bugs/" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>报错Cannot load *.so可能通用的解决方法</title>
-      <link>https://yigengjiang.github.io/posts/solution_cannot_load_so/</link>
+      <link>http://localhost:1313/posts/solution_cannot_load_so/</link>
       <pubDate>Tue, 10 Oct 2023 21:15:32 +0800</pubDate>
       <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/solution_cannot_load_so/</guid>
+      <guid>http://localhost:1313/posts/solution_cannot_load_so/</guid>
       <description>
         <![CDATA[
         <p>今天上80服务器跑mdistiller的代码时，意外发现<code>torch</code>、<code>numpy</code>都不能用了T_T</p>
 <p>导入<code>torch</code>、<code>numpy</code>库时出现如下报错情况</p>
-<pre><code class="language-bash">sh: 0: getcwd() failed: No[&hellip;] <a href="https://yigengjiang.github.io/posts/solution_cannot_load_so/">https://yigengjiang.github.io/posts/solution_cannot_load_so/</a></code></pre>
+<pre><code class="language-bash">sh: 0: getcwd() failed: No[&hellip;] <a href="http://localhost:1313/posts/solution_cannot_load_so/">http://localhost:1313/posts/solution_cannot_load_so/</a></code></pre>
         
         ]]>
       </description>
