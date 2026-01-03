@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN"></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>World Model, Curiosity and Meta Learning - Yigeng’s Blog</title>
+    <meta property="og:title" content="World Model, Curiosity and Meta Learning - Yigeng’s Blog">
+    
+    <meta name="twitter:card" content="summary">
+    
+      
+      <meta property="description" content="This proposal presents a complete architecture toward Artificial General Intelligence (AGI). The architecture is built upon a core epistemological assumption: &amp;ldquo;The predictive power of the &amp;hellip;">
+      <meta property="og:description" content="This proposal presents a complete architecture toward Artificial General Intelligence (AGI). The architecture is built upon a core epistemological assumption: &amp;ldquo;The predictive power of the &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+    
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  </head>
+
+  
+  
+  
+  <body class="single posts">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+    
+      <a href="/">
+      
+      <img src="/images/bird.jpg" alt="至繁归于至简" />
+      
+      </a>
+    
+    </div>
+    <div class="menu"><span><a href="/">Home</a></span>
+      <span><a href="/about/">About</a></span>
+      <span class="active"><a href="/posts/">Archives</a></span>
+      <span><a href="/categories">Categories</a></span>
+      <span><a href="/search/">Search</a></span>
+      <span><a href="/series/">Series</a></span>
+      <span><a href="/tags/">Tags</a></span>
+      <span><a href="/index.xml">RSS</a></span>
+      
+    </div>
+    </nav>
+
+<div class="article-meta">
+<h1 class="title">World Model, Curiosity and Meta Learning</h1>
+
+<h3 class="meta-line">
+  <span>
+
+<span class="author">yigeng &amp; Gemini &amp; Claude</span>
+
+
+
+
+
+
+<span class="date">2026-01-03</span>
+
+
+</span>
+  <span class="term">
+  
+  
+  {<a href="/categories/philosophy/" class="term-cat">Philosophy</a>}
+  
+  
+  
+  
+  
+  <a href="/tags/deep-learning/" class="term-tag">[Deep Learning,</a>
+  
+  <a href="/tags/agent/" class="term-tag">Agent,</a>
+  
+  <a href="/tags/reinforcement-learning/" class="term-tag">Reinforcement Learning,</a>
+  
+  <a href="/tags/computer-science/" class="term-tag">Computer Science]</a>
+  
+  
+  </span>
+</h3>
+</div>
+
+<div class="main">
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#1-theoretical-axiom-forward-model-equivalence">1. Theoretical Axiom: Forward Model Equivalence</a></li>
+    <li><a href="#2-core-architecture-components">2. Core Architecture Components</a>
+      <ul>
+        <li><a href="#21-world-model">2.1 World Model</a></li>
+        <li><a href="#22--curiosity">2.2  Curiosity</a></li>
+        <li><a href="#23-memory">2.3 Memory</a></li>
+        <li><a href="#24-recursive-meta-agent-search">2.4 Recursive Meta-Agent Search</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-algorithm-pseudocode">3. Algorithm Pseudocode</a></li>
+    <li><a href="#4-conclusion">4. Conclusion</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+
+
+<h1 id="abstract">Abstract</h1>
+<p>This proposal presents a complete architecture toward Artificial General Intelligence (AGI). The architecture is built upon a core epistemological assumption: <strong>&ldquo;The predictive power of the forward dynamics model is equivalent to the ability to understand the physical world.&rdquo;</strong> Based on this, we construct a recursive evolutionary system where: 1) <strong>The base agent</strong> internalizes environmental regularities by training a high-fidelity forward model (i.e., world model); 2) <strong>Intrinsic motivation</strong> acts as the &ldquo;cognitive gradient&rdquo; of the world model, driving the agent to actively explore unknown domains to patch model deficiencies; 3) <strong>Recursive Meta-Architectural Search (RMAS)</strong> optimizes neural network topology through generational evolution to emerge stronger world simulation capabilities. This system aims to achieve a cognitive leap from &ldquo;passive adaptation&rdquo; to &ldquo;active simulation and planning.&rdquo;</p>
+<hr>
+<h1 id="1-theoretical-axiom-forward-model-equivalence">1. Theoretical Axiom: Forward Model Equivalence</h1>
+<p>Before defining the specific architecture, we first establish the core axiom of this system:</p>
+<p><strong>Axiom $H_{equiv}$: The Agent is the World Model</strong></p>
+<p>A complete agent must possess an internal function $f_{world}$ that can accurately predict the future state $s_{t+1}$ based on the current state $s_t$ and action $a_t$.</p>
+<p>$$s_{t+1} \approx f_{world}(s_t, a_t; \theta)$$</p>
+<ul>
+<li><strong>Corollary A (Simulation)</strong>: If $f_{world}$ is sufficiently accurate, the agent can perform counterfactual reasoning in its &ldquo;mind,&rdquo; i.e., &ldquo;simulation.&rdquo;</li>
+<li><strong>Corollary B (Understanding)</strong>: The prediction error $\mathcal{L}_{pred} = \Vert f_{world}(s_t, a_t) - s_{t+1} \Vert$ is the only objective metric for measuring the agent&rsquo;s &ldquo;understanding.&rdquo;</li>
+</ul>
+<blockquote>
+<p><em>Understanding is compression.
+Prediction is decompression.</em></p></blockquote>
+<hr>
+<h1 id="2-core-architecture-components">2. Core Architecture Components</h1>
+<h2 id="21-world-model">2.1 World Model</h2>
+<p>To avoid ineffective prediction in high-dimensional pixel space (addressing the &ldquo;TV noise&rdquo; problem raised by Yann LeCun), our world model is built upon <strong>latent space</strong>.</p>
+<p>This module contains three coupled neural networks:</p>
+<ol>
+<li>
+<p><strong>Feature Encoder (Inverse Model)</strong>: Filters uncontrollable noise.
+By solving the inverse dynamics problem $\hat{a}_t = g(\phi(s_t), \phi(s_{t+1}))$, it extracts causally-relevant features $\phi(s)$.
+Tells the agent &ldquo;what is worth paying attention to.&rdquo;</p>
+</li>
+<li>
+<p><strong>Forward Dynamics Core</strong>: <strong>This is the world model itself</strong>.</p>
+</li>
+</ol>
+<p>$$\hat{\phi}_{t+1} = f_{forward}(\phi(s_t), a_t; \theta_{world})$$
+Simulates physical laws, social rules, and logical causality.</p>
+<ol start="3">
+<li><strong>Prediction Head</strong>: Maps latent states back to predicted outcomes (used for computing rewards).</li>
+</ol>
+<h2 id="22--curiosity">2.2  Curiosity</h2>
+<p>In this architecture, curiosity is no longer just about &ldquo;getting more points,&rdquo; but about <strong>&ldquo;patching the world model.&rdquo;</strong></p>
+<ul>
+<li><strong>Mechanism</strong>: The agent actively seeks states where $f_{forward}$ prediction fails.</li>
+<li><strong>Intrinsic Reward</strong>: $r_{intrinsic} \propto \Vert \hat{\phi}_{t+1} - \phi_{t+1} \Vert^2$.</li>
+<li><strong>Philosophical Meaning</strong>: True learning only occurs when reality violates the model&rsquo;s predictions (i.e., feeling &ldquo;surprised&rdquo;). This drive causes the agent to experiment like a scientist even without external tasks, to refine its internal physics model.</li>
+</ul>
+<h2 id="23-memory">2.3 Memory</h2>
+<p>The world model needs to predict not only $t+1$ but also $t+N$. To support long-range dependencies:</p>
+<ul>
+<li>We introduce Memory $\mathcal{M}$.</li>
+<li>Memory matrix $\mathcal{M}$ stores the &ldquo;long-term context&rdquo; of the world model, transforming the forward model $f_{forward}$ into $s_{t+1} \approx f(s_t, a_t, \mathcal{M}_t)$, enabling it to handle non-Markovian environments (POMDPs).</li>
+</ul>
+<h2 id="24-recursive-meta-agent-search">2.4 Recursive Meta-Agent Search</h2>
+<p>Controlled by meta-agent $\Pi_\Phi$ (Architect).</p>
+<ul>
+<li><strong>Objective</strong>: Not to directly maximize task rewards, but to maximize the sub-agent&rsquo;s <strong>&ldquo;world modeling efficiency&rdquo;</strong> (i.e., achieving the lowest prediction error with the fewest samples).</li>
+<li><strong>Evolution</strong>: The meta-agent continuously rewrites the base agent&rsquo;s neural network architecture (e.g., number of layers, attention mechanism types) to evolve a &ldquo;brain&rdquo; that can more efficiently simulate complex physical laws.</li>
+</ul>
+<hr>
+<h1 id="3-algorithm-pseudocode">3. Algorithm Pseudocode</h1>
+<p>This pseudocode demonstrates how the relationship between all the compontents.</p>
+<pre><code class="language-python"># Algorithm: RMAS with Generative World Models
+
+def RMAS_World_Model_System():
+    # Meta-Agent: The Architect of Intelligence
+    Meta_Architect = Initialize_Policy()
+
+    # --- OUTER LOOP: Evolution of Cognitive Architecture ---
+    while not Singularity_Reached:
+        
+        # 1. Design Phase: Generate a Brain Structure optimized for World Modeling
+        # Topology determines the capacity of the Forward Model
+        Brain_Topology, Theta_init = Meta_Architect.generate_design()
+        
+        # 2. Simulation Phase: Evaluate Intelligence in Objective Reality
+        fitness, prediction_fidelity = Simulate_Cognition(Brain_Topology, Theta_init)
+        
+        # 3. Meta-Update: Survival of the &quot;Most Predictive&quot;
+        # We favor architectures that can better predict (understand) the world
+        Meta_Architect.update_strategy(fitness, prediction_fidelity)
+        
+        # 4. Curriculum: Increase World Complexity
+        if prediction_fidelity &gt; High_Fidelity_Threshold:
+            World.unlock_quantum_mechanics_level() # Example of complexity jump
+
+def Simulate_Cognition(Topology, Theta):
+    # Instantiate the agent
+    Agent = Build_Agent(Topology, Theta)
+    
+    # [The Core]: The Forward Model IS the World Model
+    # It predicts the future state features given current state and action
+    World_Model = Instantiate_Forward_Model(Topology) 
+    
+    # [The Filter]: Inverse Model to ignore noise (LeCun's JEPA style)
+    Feature_Encoder = Instantiate_Inverse_Model(Topology)
+    
+    Memory = Initialize_Memory()
+    s_t = Environment.reset()
+
+    total_reward = 0
+    avg_prediction_error = 0
+
+    while Agent.is_alive():
+        
+        # A. Perception &amp; Context Retrieval
+        context = Memory.read(s_t)
+        
+        # B. Imagination/Planning (Optional step for Model-Based RL)
+        # Agent can use World_Model to simulate 5 steps into the future before acting
+        # imagined_future = World_Model.rollout(s_t, context, candidate_actions)
+        # action = choose_best(imagined_future)
+        
+        # For Model-Free + Curiosity (Simpler version):
+        action = Agent.policy(s_t, context)
+        
+        # C. Interaction
+        s_next, r_ext = Environment.step(action)
+        
+        # D. World Model Validation (The &quot;Understanding&quot; Step)
+        # 1. Encode Reality: Get latent features of s_t and s_next
+        phi_t = Feature_Encoder(s_t)
+        phi_next = Feature_Encoder(s_next)
+        
+        # 2. Predict Reality: What did the World Model think would happen?
+        phi_next_pred = World_Model.forward(phi_t, action, context)
+        
+        # 3. Measure Surprise (Prediction Error)
+        # Low Error = Understanding; High Error = Ignorance (or Hallucination)
+        surprise = MSE_Loss(phi_next_pred, phi_next)
+        
+        # E. Intrinsic Motivation Calculation
+        # The agent gets a dopamine hit for being &quot;surprised&quot; (learning opportunity)
+        # BUT the long-term goal is to minimize this surprise (mastery)
+        r_int = Calculate_Curiosity(surprise)
+        
+        # F. Update Synapses (Learning)
+        # 1. Improve Policy (to get more reward)
+        Agent.update_policy(r_ext + Lambda * r_int)
+        
+        # 2. Improve World Model (to better understand physics)
+        # This is Self-Supervised Learning: The world provides the labels
+        World_Model.update(loss=surprise)
+        Feature_Encoder.update(s_t, s_next, action)
+        
+        # Update state
+        Memory.write(s_t, action, context)
+        s_t = s_next
+        total_reward += r_ext
+        avg_prediction_error += surprise.item()
+
+    # Return fitness AND how well the agent understood the world
+    return total_reward, 1.0 / (avg_prediction_error + epsilon)
+
+</code></pre>
+<hr>
+<h1 id="4-conclusion">4. Conclusion</h1>
+<p>This proposal presents a complete path toward AGI by combining four essential components: <strong>World Models</strong> (to understand causality), <strong>Curiosity</strong> (to drive exploration), <strong>Memory</strong> (to handle long-term context), and <strong>Meta-Agent Architecture</strong> (to recursively improve learning). When placed in a rich simulated environment, an agent with these capabilities can achieve human-level learning through experience alone.</p>
+<p>However, before reaching the singularity, <strong>safety must come first</strong>. I think <strong>AI-Human Co Improve</strong> is more important.</p>
+<p>The goal is not AI that replaces humanity, but AI that <strong>learns together with us</strong>, augmenting human capability while preserving safety and shared purpose.</p>
+<hr>
+<h1 id="references">References</h1>
+<ol>
+<li>
+<p><strong>LeCun, Y.</strong> (2022). &ldquo;A Path Towards Autonomous Machine Intelligence.&rdquo; <em>OpenReview</em>, Version 0.9.2. <a href="https://openreview.net/forum?id=BZ5a1r-kVsf">https://openreview.net/forum?id=BZ5a1r-kVsf</a><br>
+<em>Yann LeCun&rsquo;s Joint-Embedding Predictive Architecture (JEPA), proposing that world models should operate in abstract representation space to avoid predicting irrelevant details.</em></p>
+</li>
+<li>
+<p><strong>Richens, J., Abel, D., Bellot, A., &amp; Everitt, T.</strong> (2025). &ldquo;General Agents Contain World Models.&rdquo; <em>arXiv preprint arXiv:2506.01622</em>. <a href="https://arxiv.org/abs/2506.01622">https://arxiv.org/abs/2506.01622</a><br>
+<em>Formally proves that any agent capable of generalizing to multi-step goal-directed tasks must have learned a predictive model of its environment, even if implicitly.</em></p>
+</li>
+<li>
+<p><strong>Sutton, R. S.</strong> (2025). &ldquo;The Oak Architecture: A Vision of SuperIntelligence from Experience.&rdquo; <em>Reinforcement Learning Conference (RLC) 2025</em>. <a href="https://www.youtube.com/watch?v=gEbbGyNkR2U">https://www.youtube.com/watch?v=gEbbGyNkR2U</a><br>
+<em>Proposes the Oak architecture, a model-based RL system where all components learn continually, using the FC-STOMP progression: Feature Construction, SubTask, Option, Model, and Planning to build abstractions in state and time.</em></p>
+</li>
+</ol>
+
+
+
+<nav class="post-nav fullwidth kai">
+  <span class="nav-prev">&larr; <a href="/posts/human_machine_proof/">Can Machines Replace Humans? A Formal Proof</a></span>
+  <span class="nav-next">&empty; &rarr;</span>
+</nav>
+
+
+<section class="fullwidth comments">
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yigeng" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+</section>
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+</div>
+  <footer class="small">
+  <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fix-toc.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/ol-id.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
+
+
+
+
+
+
+  
+  
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2026 | <a href="https://github.com/yigengjiang">Github</a></span>
+    <span class="menu-bottom">
+
+
+
+
+
+
+
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href="/search/">Search</a>
+<a href="#">Back to top</a>
+</span>
+  </p>
+  
+  </footer>
+  </body>
+</html>
+
+
+

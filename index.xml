@@ -6,8 +6,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 03 Jan 2026 11:20:56 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jan 2026 15:13:55 +0800</lastBuildDate>
     <atom:link href="https://yigengjiang.github.io/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>World Model, Curiosity and Meta Learning</title>
+      <link>https://yigengjiang.github.io/posts/how_to_agi/</link>
+      <pubDate>Sat, 03 Jan 2026 15:13:55 +0800</pubDate>
+      <author>yigeng &amp; Gemini &amp; Claude</author>
+      <guid>https://yigengjiang.github.io/posts/how_to_agi/</guid>
+      <description>
+        <![CDATA[
+        <h1 id="abstract">Abstract</h1>
+<p>This proposal presents a complete architecture toward Artificial General Intelligence[&hellip;] <a href="https://yigengjiang.github.io/posts/how_to_agi/">https://yigengjiang.github.io/posts/how_to_agi/</a></p>
+        
+        ]]>
+      </description>
+    </item>
+    
     
     
     <item>
@@ -165,24 +182,6 @@
         <p>今天上80服务器跑mdistiller的代码时，意外发现<code>torch</code>、<code>numpy</code>都不能用了T_T</p>
 <p>导入<code>torch</code>、<code>numpy</code>库时出现如下报错情况</p>
 <pre><code class="language-bash">sh: 0: getcwd() failed: No[&hellip;] <a href="https://yigengjiang.github.io/posts/solution_cannot_load_so/">https://yigengjiang.github.io/posts/solution_cannot_load_so/</a></code></pre>
-        
-        ]]>
-      </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>信息学科的大学之道</title>
-      <link>https://yigengjiang.github.io/posts/higher_education_of_computer_science/</link>
-      <pubDate>Sat, 30 Sep 2023 20:18:34 +0800</pubDate>
-      <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/higher_education_of_computer_science/</guid>
-      <description>
-        <![CDATA[
-        <p><img src="https://typora-bookworm-images.oss-cn-hangzhou.aliyuncs.com/images/202309301746357.png" alt="image-20230930174619560" title="有意境的封面图"></p>
-<p>梅贻琦先生有句名言：“所谓大学之大，非有大楼之谓也，乃有大师之谓也。”实际上，我们并没有对“大师”做出一个统一标准的定义，人人心中都有自己的大师。但我认为大师讲课至少会给人以启发和深思。</p>
-<p>研一开学，[&hellip;] <a href="https://yigengjiang.github.io/posts/higher_education_of_computer_science/">https://yigengjiang.github.io/posts/higher_education_of_computer_science/</a></p>
         
         ]]>
       </description>
