@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN"></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Can Machines Replace Humans? A Formal Proof - Yigeng’s Blog</title>
+    <meta property="og:title" content="Can Machines Replace Humans? A Formal Proof - Yigeng’s Blog">
+    
+    <meta name="twitter:card" content="summary">
+    
+      
+      <meta property="description" content="This argument aims to explore whether non-biological substrates (i.e., &amp;ldquo;artificial substrates&amp;rdquo;) can theoretically completely replace biological substrates (humans), thereby realizing all &amp;hellip;">
+      <meta property="og:description" content="This argument aims to explore whether non-biological substrates (i.e., &amp;ldquo;artificial substrates&amp;rdquo;) can theoretically completely replace biological substrates (humans), thereby realizing all &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+    
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  </head>
+
+  
+  
+  
+  <body class="single posts">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+    
+      <a href="/">
+      
+      <img src="/images/bird.jpg" alt="至繁归于至简" />
+      
+      </a>
+    
+    </div>
+    <div class="menu"><span><a href="/">Home</a></span>
+      <span><a href="/about/">About</a></span>
+      <span class="active"><a href="/posts/">Archives</a></span>
+      <span><a href="/categories">Categories</a></span>
+      <span><a href="/search/">Search</a></span>
+      <span><a href="/series/">Series</a></span>
+      <span><a href="/tags/">Tags</a></span>
+      <span><a href="/index.xml">RSS</a></span>
+      
+    </div>
+    </nav>
+
+<div class="article-meta">
+<h1 class="title">Can Machines Replace Humans? A Formal Proof</h1>
+
+<h3 class="meta-line">
+  <span>
+
+<span class="author">yigeng &amp; Gemini &amp; Claude</span>
+
+
+
+
+
+
+<span class="date">2026-01-03</span>
+
+
+</span>
+  <span class="term">
+  
+  
+  {<a href="/categories/philosophy/" class="term-cat">Philosophy</a>}
+  
+  
+  
+  
+  
+  <a href="/tags/computer-science/" class="term-tag">[Computer Science]</a>
+  
+  
+  </span>
+</h3>
+</div>
+
+<div class="main">
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#part-i-introduction">Part I: Introduction</a>
+      <ul>
+        <li><a href="#11-the-turing-machine-paradigm">1.1 The Turing Machine Paradigm</a></li>
+        <li><a href="#12-the-microtubule-quantum-paradigm">1.2 The Microtubule Quantum Paradigm</a></li>
+        <li><a href="#13-transition-to-argument">1.3 Transition to Argument</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-ii-formal-argumentation-system">Part II: Formal Argumentation System</a>
+      <ul>
+        <li><a href="#21-definitions">2.1 Definitions</a></li>
+        <li><a href="#22-axioms">2.2 Axioms</a></li>
+        <li><a href="#23-deduction">2.3 Deduction</a>
+          <ul>
+            <li><a href="#step-1-micro-isomorphism">Step 1: Micro-Isomorphism</a></li>
+            <li><a href="#step-2-inductive-reconstruction">Step 2: Inductive Reconstruction</a></li>
+            <li><a href="#step-3-engineering-completeness-of-embodiment">Step 3: Engineering Completeness of Embodiment</a></li>
+            <li><a href="#step-4-universal-functionality">Step 4: Universal Functionality</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#part-iii-conclusion">Part III: Conclusion</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+
+
+<hr>
+<h1 id="part-i-introduction">Part I: Introduction</h1>
+<p>This argument aims to explore whether non-biological substrates (i.e., &ldquo;artificial substrates&rdquo;) can theoretically completely replace biological substrates (humans), thereby realizing all human functions. Before developing a formal proof, we must first clarify two opposing physical/philosophical paradigms regarding the &ldquo;nature of consciousness and intelligence,&rdquo; which will determine the axiomatic foundation of this argument.</p>
+<h2 id="11-the-turing-machine-paradigm">1.1 The Turing Machine Paradigm</h2>
+<p>This paradigm supports the <strong>Computational Theory of Mind</strong>.</p>
+<ul>
+<li><strong>Core Assumption</strong>: The brain is essentially an extremely complex <strong>information processing system</strong>. Biological neurons are logic gates, synaptic connections are state storage, and consciousness is algorithmic software running on wetware.</li>
+<li><strong>Inference</strong>: According to the <strong>Church-Turing Thesis</strong>, any computable process can be simulated by a Universal Turing Machine.</li>
+<li><strong>Support for this Argument</strong>: If the brain is a Turing machine, then <strong>Substrate Independence</strong> holds. Silicon-based chips can perfectly replace carbon-based neurons as long as they can execute the same logical operations.</li>
+</ul>
+<h2 id="12-the-microtubule-quantum-paradigm">1.2 The Microtubule Quantum Paradigm</h2>
+<p>This paradigm, proposed by Roger Penrose and others, represents the <strong>non-computable view under physicalism</strong>.</p>
+<ul>
+<li><strong>Core Assumption</strong>: The brain is not merely a computer; <strong>microtubules</strong> inside neurons utilize quantum coherence and wave function collapse (Orch-OR) to generate consciousness.</li>
+<li><strong>Inference</strong>: Human thinking contains Gödelian &ldquo;non-algorithmic&rdquo; components that classical Turing machines cannot simulate, such as insights or intuitions arising from quantum collapse.</li>
+<li><strong>Challenge</strong>: If this paradigm is true, purely classical computation cannot reproduce human intelligence.</li>
+</ul>
+<h2 id="13-transition-to-argument">1.3 Transition to Argument</h2>
+<p>To advance this argument, we need not completely disprove the microtubule quantum effect; we only need to introduce the more general <strong>Church-Turing-Deutsch Principle</strong>:</p>
+<blockquote>
+<p>&ldquo;Any finite physical process can be perfectly simulated by a universal quantum computer.&rdquo;</p></blockquote>
+<p><strong>Therefore, this argument proceeds from the following position</strong>: Whether the brain is a classical neural network or a quantum microtubule system, it is ultimately a physical system. As long as artificial substrates (whether silicon-based chips or future quantum processors) can simulate this physical process, replacement becomes possible.</p>
+<hr>
+<h1 id="part-ii-formal-argumentation-system">Part II: Formal Argumentation System</h1>
+<h2 id="21-definitions">2.1 Definitions</h2>
+<ul>
+<li>Let $H$ be the set of human cognitive and physical functions.</li>
+<li>Let $N_{bio}$ be the set of biological neurons in a human brain, where $|N_{bio}| \approx 86 \times 10^9$.</li>
+<li>Let $N_{art}$ be the set of artificial computational units (e.g., silicon neurons or quantum bits).</li>
+<li>Let $S$ be the functional state of the global system (the brain/mind).</li>
+<li>Let $P$ be the set of physical laws governing the interaction of matter.</li>
+</ul>
+<h2 id="22-axioms">2.2 Axioms</h2>
+<ul>
+<li><strong>Axiom A1 (Physical Closure)</strong>: All functions of the brain (including consciousness) are entirely determined by its physical structure and physical state evolution; there is no non-physical &ldquo;soul&rdquo; intervention.</li>
+<li><strong>Axiom A2 (Local Replaceability)</strong>: If a physical unit $u&rsquo;$ is equivalent to unit $u$ in terms of input-output and state transitions, then at the system level, $u&rsquo;$ can replace $u$ without changing the overall system function.</li>
+</ul>
+<p>$$\forall u \in N_{bio}, \exists u&rsquo; \in N_{art} : Behavior(u) \equiv Behavior(u&rsquo;)$$</p>
+<hr>
+<h2 id="23-deduction">2.3 Deduction</h2>
+<h3 id="step-1-micro-isomorphism">Step 1: Micro-Isomorphism</h3>
+<p>Based on the development of engineering physics, we construct artificial neurons $n_{art}^i$.
+If brain operation follows classical physics, we use analog circuits or digital algorithms to reproduce the membrane potential equations of $n_{bio}^i$ .
+If brain operation follows quantum physics, we use quantum logic gates to reproduce the quantum state evolution of $n_{bio}^i$.
+<strong>Proposition 1</strong>: There exists a technological means $T$ such that a single biological neuron can be perfectly simulated by an artificial unit.</p>
+<p>$$P_1: n_{art}^i \xrightarrow{T} n_{bio}^i$$</p>
+<h3 id="step-2-inductive-reconstruction">Step 2: Inductive Reconstruction</h3>
+<p>We use mathematical induction to prove the replaceability of the entire neural network.</p>
+<ul>
+<li>
+<p><strong>Base Case</strong>:
+Let brain $B_0$ be a fully biological brain. Replacing 1 neuron yields $B_1$. By Proposition 1 and Axiom A2, $Function(B_1) = Function(B_0)$.</p>
+</li>
+<li>
+<p><strong>Inductive Hypothesis</strong>:
+Assume that after replacing $k$ neurons, the hybrid brain $B_k$ still maintains functional integrity, i.e., $Function(B_k) = Function(B_0)$.</p>
+</li>
+<li>
+<p><strong>Inductive Step</strong>:
+Consider the $(k+1)$-th neuron. Since the interactions between neurons are local (Local Interactions) and follow physical laws $P$, in the environment of $B_k$, when the $(k+1)$-th biological neuron is replaced by an artificial neuron, its signal transmission to neighboring nodes remains unchanged.</p>
+</li>
+<li>
+<p><strong>Conclusion</strong>:
+When $k$ approaches the total number of brain neurons $N$, the fully artificial brain $B_{art}$ is functionally strictly equivalent to the biological brain $B_{bio}$.</p>
+</li>
+</ul>
+<p>$$\lim_{k \to N} B_k = B_{art} \implies B_{art} \equiv B_{bio}$$</p>
+<h3 id="step-3-engineering-completeness-of-embodiment">Step 3: Engineering Completeness of Embodiment</h3>
+<p>The brain is merely a controller; the realization of function $H$ depends on actuators (the body).
+Let the kinematic characteristics of the human body be the set $K_{human}$ (degrees of freedom, torque, perceptual precision).
+Physical laws allow the construction of a mechanical system $M_{robot}$.
+Since engineering materials (such as carbon fiber, hydraulic drives, piezoelectric ceramics) typically surpass biological materials (muscles, bones) in strength, speed, and precision:</p>
+<p>$$\exists M_{robot} : K_{robot} \supseteq K_{human}$$</p>
+<h3 id="step-4-universal-functionality">Step 4: Universal Functionality</h3>
+<p>Combining <strong>Step 2</strong> (fully artificial brain) and <strong>Step 3</strong> (superhuman mechanical body).
+For any task $task \in H$ that humans can complete:</p>
+<ol>
+<li>The brain $B_{art}$ can generate the planning and control signals required to complete that task (derived from $B_{art} \equiv B_{bio}$).</li>
+<li>The body $M_{robot}$ can execute these signals and produce physical effects (derived from $K_{robot} \supseteq K_{human}$).</li>
+</ol>
+<hr>
+<h1 id="part-iii-conclusion">Part III: Conclusion</h1>
+<p>In summary, although the <strong>Microtubule Quantum Paradigm</strong> poses challenges to current AI based on classical computers, grounded in the more general <strong>physicalism</strong> and the <strong>Church-Turing-Deutsch Principle</strong>, as long as the universe is physically closed, we will inevitably be able to construct artificial substrates that are microscopically isomorphic and macroscopically equivalent.</p>
+<p>Through rigorous recursion via mathematical induction, we have logically proven that: <strong>Artificial substrates can not only simulate humans but also possess theoretical completeness in replacing humans to execute any physical and cognitive tasks.</strong></p>
+<hr>
+<h1 id="references">References</h1>
+<ol>
+<li>
+<p><strong>Turing, A. M.</strong> (1936). &ldquo;On Computable Numbers, with an Application to the Entscheidungsproblem.&rdquo; <em>Proceedings of the London Mathematical Society</em>, 2(42), 230-265. <a href="https://doi.org/10.1112/plms/s2-42.1.230">https://doi.org/10.1112/plms/s2-42.1.230</a><br>
+<em>Foundation of the Church-Turing Thesis: any computable process can be simulated by a Universal Turing Machine.</em></p>
+</li>
+<li>
+<p><strong>Gödel, K.</strong> (1931). &ldquo;Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I.&rdquo; <em>Monatshefte für Mathematik und Physik</em>, 38, 173-198. <a href="https://doi.org/10.1007/BF01700692">https://doi.org/10.1007/BF01700692</a><br>
+<em>Incompleteness theorems establishing the existence of &ldquo;non-algorithmic&rdquo; components in formal systems.</em></p>
+</li>
+<li>
+<p><strong>Penrose, R.</strong> (1989). <em>The Emperor&rsquo;s New Mind: Concerning Computers, Minds, and the Laws of Physics</em>. Oxford University Press.<br>
+<em>Argues for the non-computable view of consciousness based on quantum mechanics and Gödelian arguments.</em></p>
+</li>
+<li>
+<p><strong>Deutsch, D.</strong> (1985). &ldquo;Quantum Theory, the Church-Turing Principle and the Universal Quantum Computer.&rdquo; <em>Proceedings of the Royal Society of London A</em>, 400(1818), 97-117. <a href="https://doi.org/10.1098/rspa.1985.0070">https://doi.org/10.1098/rspa.1985.0070</a><br>
+<em>Establishes the Church-Turing-Deutsch Principle: any finite physical process can be perfectly simulated by a universal quantum computer.</em></p>
+</li>
+</ol>
+
+
+
+<nav class="post-nav fullwidth kai">
+  <span class="nav-prev">&larr; <a href="/posts/humanities_resource_collection/">A Humanities Resource Collection</a></span>
+  <span class="nav-next">&empty; &rarr;</span>
+</nav>
+
+
+<section class="fullwidth comments">
+    <div class="comments">
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yigeng" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+</section>
+
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.js" defer></script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.js" defer></script>
+</div>
+  <footer class="small">
+  <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fix-toc.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/ol-id.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
+
+
+
+
+
+
+  
+  
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://github.com/yigengjiang">Yigeng Jiang</a> 2023-2026 | <a href="https://github.com/yigengjiang">Github</a></span>
+    <span class="menu-bottom">
+
+
+
+
+
+
+
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href="/search/">Search</a>
+<a href="#">Back to top</a>
+</span>
+  </p>
+  
+  </footer>
+  </body>
+</html>
+
+
+

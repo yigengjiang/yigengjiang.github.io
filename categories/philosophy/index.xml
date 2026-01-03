@@ -1,0 +1,31 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Philosophy on Yigeng’s Blog</title>
+    <link>https://yigengjiang.github.io/categories/philosophy/</link>
+    <description>Recent content in Philosophy on Yigeng’s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 03 Jan 2026 11:20:56 +0800</lastBuildDate>
+    <atom:link href="https://yigengjiang.github.io/categories/philosophy/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Can Machines Replace Humans? A Formal Proof</title>
+      <link>https://yigengjiang.github.io/posts/human_machine_proof/</link>
+      <pubDate>Sat, 03 Jan 2026 11:20:56 +0800</pubDate>
+      <author>yigeng &amp; Gemini &amp; Claude</author>
+      <guid>https://yigengjiang.github.io/posts/human_machine_proof/</guid>
+      <description>
+        <![CDATA[
+        <hr>
+<h1 id="part-i-introduction">Part I: Introduction</h1>
+<p>This argument aims to explore whether non-biological substrates (i.e.,[&hellip;] <a href="https://yigengjiang.github.io/posts/human_machine_proof/">https://yigengjiang.github.io/posts/human_machine_proof/</a></p>
+        
+        ]]>
+      </description>
+    </item>
+    
+    
+  </channel>
+</rss>

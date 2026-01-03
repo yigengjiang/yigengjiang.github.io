@@ -2,28 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://yigengjiang.github.io/series/ai-philosophy/</loc>
+    <lastmod>2026-01-03T11:20:56+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/posts/human_machine_proof/</loc>
+    <lastmod>2026-01-03T11:20:56+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/categories/</loc>
+    <lastmod>2026-01-03T11:20:56+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/tags/computer-science/</loc>
+    <lastmod>2026-01-03T11:20:56+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/</loc>
+    <lastmod>2026-01-03T11:20:56+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/categories/philosophy/</loc>
+    <lastmod>2026-01-03T11:20:56+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/posts/</loc>
+    <lastmod>2026-01-03T11:20:56+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/series/</loc>
+    <lastmod>2026-01-03T11:20:56+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/tags/</loc>
+    <lastmod>2026-01-03T11:20:56+08:00</lastmod>
+  </url><url>
     <loc>https://yigengjiang.github.io/posts/humanities_resource_collection/</loc>
     <lastmod>2025-04-01T11:16:27+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/categories/</loc>
-    <lastmod>2025-04-01T11:16:27+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/</loc>
-    <lastmod>2025-04-01T11:16:27+08:00</lastmod>
-  </url><url>
     <loc>https://yigengjiang.github.io/categories/life/</loc>
-    <lastmod>2025-04-01T11:16:27+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/posts/</loc>
     <lastmod>2025-04-01T11:16:27+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/categories/thoughts/</loc>
     <lastmod>2025-04-01T11:16:27+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/posts/2024_summary/</loc>
-    <lastmod>2025-02-10T19:30:55+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/series/</loc>
     <lastmod>2025-02-10T19:30:55+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/series/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
@@ -33,9 +48,6 @@
     <lastmod>2024-06-16T17:33:42+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/optimization/</loc>
-    <lastmod>2024-06-16T17:33:42+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/tags/</loc>
     <lastmod>2024-06-16T17:33:42+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/posts/summary_convex_optimization/</loc>
@@ -87,9 +99,6 @@
     <lastmod>2023-10-10T21:15:32+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/tags/chinese-traditional-culture/</loc>
-    <lastmod>2023-09-30T20:18:34+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/tags/computer-science/</loc>
     <lastmod>2023-09-30T20:18:34+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/posts/higher_education_of_computer_science/</loc>
