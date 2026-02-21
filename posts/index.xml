@@ -6,8 +6,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 03 Jan 2026 15:13:55 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Feb 2026 20:49:28 +0800</lastBuildDate>
     <atom:link href="https://yigengjiang.github.io/posts/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2025 山雀</title>
+      <link>https://yigengjiang.github.io/posts/2025_summary/</link>
+      <pubDate>Tue, 17 Feb 2026 20:49:28 +0800</pubDate>
+      <author>yigeng</author>
+      <guid>https://yigengjiang.github.io/posts/2025_summary/</guid>
+      <description>
+        <![CDATA[
+        <center>
+  <p style="font-weight:bold; font-size:1.3em; color:#222; line-height:1;">
+    <br>自然赠予你<br />
+    <br>树冠 微风 肩头的暴雨<br />
+    <br>片刻后生成<br />
+    <br>平衡 忠诚 不息的身体<br />
+  </p>
+</center>
+<p>回顾 2025 年时间线，主要还是以实习为主，从一个 helper 的角色，逐渐[&hellip;] <a href="https://yigengjiang.github.io/posts/2025_summary/">https://yigengjiang.github.io/posts/2025_summary/</a></p>
+        
+        ]]>
+      </description>
+    </item>
+    
     
     
     <item>
@@ -164,24 +188,6 @@
       <description>
         <![CDATA[
         <p>这学期选了一门矩阵论的课，其中有个作业是小组组队科普一些矩阵论的相关应用。我们组选了<a href="https://en.wikipedia.org/wiki/Harris_corner_detector">Harris Corner detection</a>作为报告题目，我负责代码实现部分，花时间整理了下这方面的东西，感觉角点[&hellip;] <a href="https://yigengjiang.github.io/posts/harris_corner_detection/">https://yigengjiang.github.io/posts/harris_corner_detection/</a></p>
-        
-        ]]>
-      </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>报错Cannot load *.so可能通用的解决方法</title>
-      <link>https://yigengjiang.github.io/posts/solution_cannot_load_so/</link>
-      <pubDate>Tue, 10 Oct 2023 21:15:32 +0800</pubDate>
-      <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/solution_cannot_load_so/</guid>
-      <description>
-        <![CDATA[
-        <p>今天上80服务器跑mdistiller的代码时，意外发现<code>torch</code>、<code>numpy</code>都不能用了T_T</p>
-<p>导入<code>torch</code>、<code>numpy</code>库时出现如下报错情况</p>
-<pre><code class="language-bash">sh: 0: getcwd() failed: No[&hellip;] <a href="https://yigengjiang.github.io/posts/solution_cannot_load_so/">https://yigengjiang.github.io/posts/solution_cannot_load_so/</a></code></pre>
         
         ]]>
       </description>

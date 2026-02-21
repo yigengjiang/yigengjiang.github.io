@@ -36,6 +36,35 @@
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
   </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  .main,
+  .home {
+    font-family: 'Noto Serif', 'Noto Serif SC', Georgia, serif;
+    font-size: 1.15em;
+    line-height: 1.9;
+  }
+  .tooltip {
+    position: relative;
+    border-bottom: 1px dashed #888;
+    cursor: pointer;
+  }
+  .tooltip:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 100;
+  }
+</style>
   </head>
 
   
@@ -76,6 +105,9 @@
 
   
 <h2>2026</h2>
+  
+<ul><li><span>2026-02-17</span> <a href="/posts/2025_summary/">2025 山雀</a></li>
+</ul>
   
 <ul><li><span>2026-01-03</span> <a href="/posts/how_to_agi/">World Model, Curiosity and Meta Learning</a></li>
 <li><span>2026-01-03</span> <a href="/posts/human_machine_proof/">Can Machines Replace Humans? A Formal Proof</a></li>
@@ -132,7 +164,7 @@
 </ul>
   
   
-  <div class="stats">Total: 4 years · 17 posts · 35,730 words · 60,858 letters · 65,352 characters</div>
+  <div class="stats">Total: 4 years · 18 posts · 39,109 words · 64,562 letters · 69,231 characters</div>
 
 
 

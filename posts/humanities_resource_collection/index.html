@@ -41,6 +41,35 @@
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
   </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  .main,
+  .home {
+    font-family: 'Noto Serif', 'Noto Serif SC', Georgia, serif;
+    font-size: 1.15em;
+    line-height: 1.9;
+  }
+  .tooltip {
+    position: relative;
+    border-bottom: 1px dashed #888;
+    cursor: pointer;
+  }
+  .tooltip:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 100;
+  }
+</style>
   </head>
 
   
