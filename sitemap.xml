@@ -2,22 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://yigengjiang.github.io/posts/art_of_communication/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/categories/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/tags/chinese-traditional-culture/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/tags/management/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/categories/philosophy/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/posts/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/series/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/tags/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
+    <loc>https://yigengjiang.github.io/series/%E4%B8%AD%E5%9B%BD%E5%BC%8F%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2026-03-07T21:39:57+08:00</lastmod>
+  </url><url>
     <loc>https://yigengjiang.github.io/posts/2025_summary/</loc>
     <lastmod>2026-02-17T20:49:28+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/categories/</loc>
-    <lastmod>2026-02-17T20:49:28+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/</loc>
-    <lastmod>2026-02-17T20:49:28+08:00</lastmod>
-  </url><url>
     <loc>https://yigengjiang.github.io/categories/life/</loc>
-    <lastmod>2026-02-17T20:49:28+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/posts/</loc>
-    <lastmod>2026-02-17T20:49:28+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/series/</loc>
     <lastmod>2026-02-17T20:49:28+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/series/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
@@ -35,13 +53,7 @@
     <loc>https://yigengjiang.github.io/tags/deep-learning/</loc>
     <lastmod>2026-01-03T15:13:55+08:00</lastmod>
   </url><url>
-    <loc>https://yigengjiang.github.io/categories/philosophy/</loc>
-    <lastmod>2026-01-03T15:13:55+08:00</lastmod>
-  </url><url>
     <loc>https://yigengjiang.github.io/tags/reinforcement-learning/</loc>
-    <lastmod>2026-01-03T15:13:55+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/tags/</loc>
     <lastmod>2026-01-03T15:13:55+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/posts/how_to_agi/</loc>
@@ -106,9 +118,6 @@
   </url><url>
     <loc>https://yigengjiang.github.io/posts/solution_cannot_load_so/</loc>
     <lastmod>2023-10-10T21:15:32+08:00</lastmod>
-  </url><url>
-    <loc>https://yigengjiang.github.io/tags/chinese-traditional-culture/</loc>
-    <lastmod>2023-09-30T20:18:34+08:00</lastmod>
   </url><url>
     <loc>https://yigengjiang.github.io/posts/higher_education_of_computer_science/</loc>
     <lastmod>2023-09-30T20:18:34+08:00</lastmod>

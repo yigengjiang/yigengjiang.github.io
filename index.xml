@@ -6,8 +6,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 17 Feb 2026 20:49:28 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2026 21:39:57 +0800</lastBuildDate>
     <atom:link href="https://yigengjiang.github.io/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>《沟通的艺术》课程笔记</title>
+      <link>https://yigengjiang.github.io/posts/art_of_communication/</link>
+      <pubDate>Sat, 07 Mar 2026 21:39:57 +0800</pubDate>
+      <author>yigeng &amp; Gemini &amp; Claude</author>
+      <guid>https://yigengjiang.github.io/posts/art_of_communication/</guid>
+      <description>
+        <![CDATA[
+        <h1 id="缘起">缘起</h1>
+<p>一直以来感觉自己在语言方面的水平是比较低的，思考了下一路走来，以孔子“君子敏于事而慎于言”告诫自己，我的初步理解是&quot;少说话多做事&quot;，所以，自己逐渐成为了一个默默做事，以为通过[&hellip;] <a href="https://yigengjiang.github.io/posts/art_of_communication/">https://yigengjiang.github.io/posts/art_of_communication/</a></p>
+        
+        ]]>
+      </description>
+    </item>
+    
     
     
     <item>
@@ -172,22 +189,6 @@
 就像青春一样回不来<br />
   代替梦想的只能是勉为其难</p></center>
 <p>从今年开始，我打算每年写一次年度总结，对昨年自己的学习生活进行梳理总结，希望能够对未来带来一些启示。而年度总结的标题，如果每次[&hellip;] <a href="https://yigengjiang.github.io/posts/2023_summary/">https://yigengjiang.github.io/posts/2023_summary/</a></p>
-        
-        ]]>
-      </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>An Application in Matrix Theory:Harris Corner Detection</title>
-      <link>https://yigengjiang.github.io/posts/harris_corner_detection/</link>
-      <pubDate>Tue, 19 Dec 2023 17:58:52 +0800</pubDate>
-      <author>yigeng</author>
-      <guid>https://yigengjiang.github.io/posts/harris_corner_detection/</guid>
-      <description>
-        <![CDATA[
-        <p>这学期选了一门矩阵论的课，其中有个作业是小组组队科普一些矩阵论的相关应用。我们组选了<a href="https://en.wikipedia.org/wiki/Harris_corner_detector">Harris Corner detection</a>作为报告题目，我负责代码实现部分，花时间整理了下这方面的东西，感觉角点[&hellip;] <a href="https://yigengjiang.github.io/posts/harris_corner_detection/">https://yigengjiang.github.io/posts/harris_corner_detection/</a></p>
         
         ]]>
       </description>
